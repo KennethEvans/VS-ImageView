@@ -1,7 +1,6 @@
 ﻿#define USE_STARTUP_FILE
 //#define DEBUG_AVAILABLE_FORMATS
 
-using Clipboard_Utils;
 using KEUtils.About;
 using KEUtils.Utils;
 using System;
@@ -300,6 +299,7 @@ namespace Image_View {
         }
 
         private void OnFormLoad(object sender, EventArgs e) {
+            
             // DPI
             float dpiX, dpiY;
             using (Graphics g = this.CreateGraphics()) {

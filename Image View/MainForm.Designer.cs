@@ -97,13 +97,14 @@
             this.tableLayoutPanelTop.Controls.Add(this.panelImage, 0, 2);
             this.tableLayoutPanelTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelTop.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanelTop.Name = "tableLayoutPanelTop";
             this.tableLayoutPanelTop.RowCount = 3;
             this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelTop.Size = new System.Drawing.Size(1885, 1514);
+            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanelTop.Size = new System.Drawing.Size(1853, 1426);
             this.tableLayoutPanelTop.TabIndex = 0;
             // 
             // menuStrip
@@ -114,7 +115,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1885, 52);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.menuStrip.Size = new System.Drawing.Size(1853, 51);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -132,7 +134,7 @@
             this.toolStripSeparator3,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 48);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openImageToolStripMenuItem
@@ -205,7 +207,7 @@
             this.infoToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(104, 48);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(104, 45);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // infoToolStripMenuItem
@@ -219,7 +221,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(448, 54);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(451, 54);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnHelpAboutClicked);
             // 
@@ -247,9 +249,9 @@
             this.toolStripSeparator8,
             this.landscapeToolStripButton,
             this.portraitToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 52);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 51);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1885, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(1853, 51);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -472,8 +474,9 @@
             this.panelImage.Controls.Add(this.pictureBox);
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelImage.Location = new System.Drawing.Point(3, 106);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(1879, 1405);
+            this.panelImage.Size = new System.Drawing.Size(1847, 1316);
             this.panelImage.TabIndex = 2;
             // 
             // pictureBox
@@ -481,8 +484,9 @@
             this.pictureBox.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1879, 1405);
+            this.pictureBox.Size = new System.Drawing.Size(1847, 1316);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPictureBoxPaint);
@@ -579,13 +583,14 @@
             // MainForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1885, 1514);
+            this.ClientSize = new System.Drawing.Size(1853, 1426);
             this.ContextMenuStrip = this.contextMenuStrip;
             this.Controls.Add(this.tableLayoutPanelTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Image View";
             this.Load += new System.EventHandler(this.OnFormLoad);

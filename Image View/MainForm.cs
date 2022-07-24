@@ -2,20 +2,19 @@
 //#define DEBUG_AVAILABLE_FORMATS
 
 using KEUtils.About;
+using KEUtils.InputDialog;
+using KEUtils.ScrolledHTML;
 using KEUtils.Utils;
-using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
+using System.Drawing.Imaging;
 using System.Media;
-using System.Net;
 using System.Reflection;
-using System.Windows.Forms;
 
 namespace Image_View {
     public partial class MainForm : Form {
         public static readonly String NL = Environment.NewLine;
+        public static readonly long DEFAULT_JPEG_QUALITY = DEFAULT_JPEG_QUALITY;
         public static readonly float MOUSE_WHEEL_ZOOM_FACTOR = 0.001F;
         public static readonly float KEY_ZOOM_FACTOR = 1.1F;
         public static readonly float ZOOM_MIN = 0.1F;
@@ -29,25 +28,28 @@ namespace Image_View {
         public static readonly int EXPAND_RIGHT = 128;
         public enum ClipboardDataTypes { NULL, BITMAP, URL, CLIPBOARD };
 
-        public Image Image { get; set; }
-        public Image ImageOrig { get; set; }
-        public Image ImageCrop { get; set; }
+        private static ScrolledHTMLDialog? overviewDlg;
+
+        public Image? Image { get; set; }
+        public Image? ImageOrig { get; set; }
+        public Image? ImageCrop { get; set; }
         public bool Panning { get; set; }
         public bool KeyPanning { get; set; }
         public Point PanStart { get; set; }
         float ZoomFactor { get; set; }
         public RectangleF ViewRectangle { get; set; }
         public Rectangle CropRectangle { get; set; }
-        public string FileName { get; set; }
+        public string? FileName { get; set; }
 
         public bool Cropping { get; set; }
         public int CropX { get; set; }
         public int CropY { get; set; }
         public int CropWidth { get; set; }
         public int CropHeight { get; set; }
-        public Pen CropPen { get; set; }
+        public Pen? CropPen { get; set; }
 
-
+        public float SelectionLineWidth { get; set; } = 1.5f;
+        public Color SelectionLineColor { get; set; } = Color.Tomato;
 
         public float LeftMargin { get; set; } = 1f;
         public float RightMargin { get; set; } = 1f;
@@ -62,9 +64,31 @@ namespace Image_View {
         public MainForm() {
             InitializeComponent();
 
+            // DPI
+            float dpiX, dpiY;
+            using (Graphics g = this.CreateGraphics()) {
+                dpiX = g.DpiX;
+                dpiY = g.DpiY;
+            }
+            DPI = new PointF(dpiX, dpiY);
+
+            // Make ToolsImageList (Do here to avoid compiler warning)
+            ToolsImageList = new ImageList();
+            ToolsImageSize = new Size((int)(16 * dpiX / 96), (int)(16 * dpiY / 96));
+            ToolsImageList.ImageSize = ToolsImageSize;
+
             ZoomFactor = 1.0F;
             pictureBox.MouseWheel += new MouseEventHandler(OnPictureBoxMouseWheel);
             this.MouseWheel += new MouseEventHandler(OnPictureBoxMouseWheel);
+
+            // Settings
+            SelectionLineWidth = Properties.Settings.Default.SelectionLineWidth;
+            string hexColor = Properties.Settings.Default.SelectionLineColor;
+            try {
+                SelectionLineColor = System.Drawing.ColorTranslator.FromHtml(hexColor);
+            } catch (Exception) {
+                SelectionLineColor = Color.Tomato;
+            }
         }
 
         private void zoomImage() {
@@ -113,7 +137,7 @@ namespace Image_View {
         /// <param name="fileName">If replace is true, gets the image from this filename.</param>
         /// <param name="replace">Whether to replace the current image or not.</param>
         /// <param name="newImage">If non-null, use this image.</param>
-        private void resetImage(string fileName, bool replace, Image newImage) {
+        private void resetImage(string? fileName, bool replace, Image? newImage) {
             if (replace) {
                 if (fileName != null) {
                     if (Image != null) {
@@ -139,7 +163,7 @@ namespace Image_View {
                     }
                     if (!found) {
                         if (Image != null) Image.Dispose();
-                        if (ImageOrig != null) Image.Dispose();
+                        if (ImageOrig != null) ImageOrig.Dispose();
                         Image = new Bitmap(fileName);
                         if (Image != null) {
                             ImageOrig = (Image)Image.Clone();
@@ -187,6 +211,7 @@ namespace Image_View {
         }
 
         private void Crop() {
+            if (Image == null) return;
             resetCropping();
             if (CropWidth < 1 || CropHeight < 1) {
                 return;
@@ -208,7 +233,6 @@ namespace Image_View {
         }
 
         private void resetCropRectangle(int flags, int value) {
-            if (CropRectangle == null) return;
             int x = CropRectangle.X;
             int y = CropRectangle.Y;
             int width = CropRectangle.Width;
@@ -232,6 +256,10 @@ namespace Image_View {
             }
 
             CropRectangle = new Rectangle(x, y, width, height);
+            if (ImageCrop == null || CropPen == null) {
+                Utils.errMsg("resetCropRectangle:Invalid Image or Pen");
+                return;
+            }
             using (Graphics g = Graphics.FromImage(ImageCrop)) {
                 g.Clear(Color.Transparent);
                 g.DrawRectangle(CropPen, CropRectangle);
@@ -240,18 +268,16 @@ namespace Image_View {
         }
 
         private float getDpiAdjustedCropLineWidth() {
-            return (float)Math.Round(DPI.X / 96 * 1.5);
+            return (float)Math.Round(DPI.X / 96 * SelectionLineWidth);
         }
 
-        private Image getImageFromUrl(string url) {
-            Image image0 = null;
+        private Image? getImageFromUrl(string url) {
+            Image? image0 = null;
             try {
-                byte[] originalData;
-                using (WebClient wc = new WebClient()) {
-                    originalData = wc.DownloadData(url);
-                }
-                using (MemoryStream ms = new MemoryStream(originalData)) {
-                    image0 = Bitmap.FromStream(ms);
+                using (HttpClient? client = new HttpClient()) {
+                    using (Task<Stream>? s = client.GetStreamAsync(url)) {
+                        image0 = Bitmap.FromStream(s.Result);
+                    }
                 }
             } catch (Exception) {
                 //SystemSounds.Exclamation.Play(); // Same as Beep?
@@ -269,28 +295,34 @@ namespace Image_View {
 
         private void showAvailableDataFormats(EventArgs e) {
             // Debug
-            IDataObject dataObject;
+            IDataObject? dataObject;
             object data;
             string[] formats;
             string name;
-            DragEventArgs dev = e as DragEventArgs;
+            DragEventArgs? dev = e as DragEventArgs;
             if (dev != null) {
+                // Converting null literal or possible null value to non-nullable type.
                 dataObject = dev.Data;
+                // Converting null literal or possible null value to non-nullable type.
                 name = "DragDrop";
             } else {
                 dataObject = Clipboard.GetDataObject();
                 name = "Clipboard";
             }
-            formats = dataObject.GetFormats();
             string msg = name + " Data Formats" + NL + NL;
-            foreach (string format in formats) {
-                if (dataObject.GetDataPresent(format)) {
-                    msg += format + NL;
-                    data = dataObject.GetData(format);
-                    if (data != null) {
-                        msg += "    " + data.GetType() + NL;
-                        if (data is String) {
-                            msg += "    " + dataObject.GetData(format) + NL;
+            if (dataObject == null) {
+                msg += "No DataFormats found";
+            } else {
+                formats = dataObject.GetFormats();
+                foreach (string format in formats) {
+                    if (dataObject.GetDataPresent(format)) {
+                        msg += format + NL;
+                        data = dataObject.GetData(format);
+                        if (data != null) {
+                            msg += "    " + data.GetType() + NL;
+                            if (data is string) {
+                                msg += "    " + dataObject.GetData(format) + NL;
+                            }
                         }
                     }
                 }
@@ -299,23 +331,12 @@ namespace Image_View {
         }
 
         private void OnFormLoad(object sender, EventArgs e) {
-            
-            // DPI
-            float dpiX, dpiY;
-            using (Graphics g = this.CreateGraphics()) {
-                dpiX = g.DpiX;
-                dpiY = g.DpiY;
-            }
-            DPI = new PointF(dpiX, dpiY);
-            ToolsImageSize = new Size((int)(16 * dpiX / 96), (int)(16 * dpiY / 96));
             // Handle the custom icons for DPI
-            // Make ToolsImageList
-            ToolsImageList = new ImageList();
-            ToolsImageList.ImageSize = ToolsImageSize;
             Assembly assembly = Assembly.GetExecutingAssembly();
             string[] resourceNames = GetType().Assembly.GetManifestResourceNames();
-            Stream imageStream = assembly.GetManifestResourceStream(
+            Stream? imageStream = assembly.GetManifestResourceStream(
                 "Image_View.icons.crop-icon.png");
+            // Converting null literal or possible null value to non-nullable type.
             if (imageStream != null) {
                 ToolsImageList.Images.Add("crop", Image.FromStream(imageStream));
             }
@@ -440,6 +461,15 @@ namespace Image_View {
                 if ((Control.ModifierKeys & Keys.Control) == Keys.Control) {
                     OnPasteClick(null, null);
                 }
+            } else if (e.KeyCode == Keys.B) {
+                if ((Control.ModifierKeys & Keys.Control) == Keys.Control) {
+                    OnPasteClick(null, null);
+                    OnPrintClick(null, null);
+                }
+            } else if (e.KeyCode == Keys.P) {
+                if ((Control.ModifierKeys & Keys.Control) == Keys.Control) {
+                    OnPrintClick(null, null);
+                }
             }
         }
 
@@ -477,28 +507,112 @@ namespace Image_View {
         }
 
         private void OnSaveClick(object sender, EventArgs e) {
-            string title = "OnSaveClick";
-            string message = "Save: Not implemented yet";
-            MessageBox.Show(message, title);
+            OnSaveAsClick(sender, e);
         }
 
         private void OnSaveAsClick(object sender, EventArgs e) {
-            string title = "OnSaveAsClick";
-            string message = "Save As: Not implemented yet";
-            MessageBox.Show(message, title);
+            if (Image == null) {
+                Utils.errMsg("No image");
+                return;
+            }
+            SaveFileDialog dlg = new SaveFileDialog();
+            if (FileName != null) {
+                dlg.InitialDirectory = Path.GetDirectoryName(FileName);
+                dlg.FileName = FileName;
+            }
+            dlg.Filter = "Image Files|*.png;*.bmp;*.jpg;*.jpeg;*.jpe;*.tif;*.tiff;*.gif"
+                + "|JPEG|*.jpg;*.jpeg;*.jpe"
+                + "|PNG|*.png"
+                + "|All files|*.*";
+            dlg.Title = "Select file for saving";
+            dlg.CheckFileExists = false;
+            ImageFormat format;
+            if (dlg.ShowDialog() == DialogResult.OK) {
+                string ext = Path.GetExtension(dlg.FileName).ToLower();
+                switch (ext) {
+                    case ".png":
+                        format = ImageFormat.Png;
+                        break;
+                    case ".jpg":
+                    case ".jpe":
+                    case ".jpeg":
+                        string msg = "Enter the quality (0-100)";
+                        InputDialog qualityDlg = new InputDialog("JPEG Quality", msg, "95");
+                        DialogResult res = qualityDlg.ShowDialog();
+                        if (res == DialogResult.OK) {
+                            long quality = DEFAULT_JPEG_QUALITY;
+                            try {
+                                quality = long.Parse(qualityDlg.Value);
+                                if (quality < 0L || quality > 100L) {
+                                    Utils.errMsg($"Invalid quality {quality}, using {DEFAULT_JPEG_QUALITY}");
+                                    quality = DEFAULT_JPEG_QUALITY;
+                                }
+                            } catch (Exception) {
+                                Utils.errMsg($"Invalid quality {quality}, using {DEFAULT_JPEG_QUALITY}");
+                                quality = DEFAULT_JPEG_QUALITY;
+                            }
+                            using (EncoderParameters encoderParameters = new EncoderParameters(1))
+                            using (EncoderParameter encoderParameter = new EncoderParameter(Encoder.Quality, quality)) {
+                                ImageCodecInfo codecInfo = ImageCodecInfo.GetImageDecoders().First(codec => codec.FormatID == ImageFormat.Jpeg.Guid);
+                                encoderParameters.Param[0] = encoderParameter;
+                                Image.Save(dlg.FileName, codecInfo, encoderParameters);
+                            }
+                        }
+                        return;
+                    case ".bmp":
+                        format = ImageFormat.Bmp;
+                        break;
+                    case ".tif":
+                    case ".tiff":
+                        format = ImageFormat.Tiff;
+                        break;
+                    case ".emf":
+                        format = ImageFormat.Emf;
+                        break;
+                    case ".wmf":
+                        format = ImageFormat.Wmf;
+                        break;
+                    case ".gif":
+                        format = ImageFormat.Gif;
+                        break;
+                    default:
+                        Path.ChangeExtension(dlg.FileName, ".png");
+                        Utils.warnMsg($"Unknown file extension ({ext})" + NL
+                            + $"Saving as {dlg.FileName}");
+                        format = ImageFormat.Png;
+                        break;
+                }
+                try {
+                    Image.Save(dlg.FileName, format);
+                } catch (Exception ex) {
+                    Utils.excMsg("Error saving image", ex);
+                }
+            }
         }
 
-        private void OnPrintClick(object sender, EventArgs e) {
+        private void OnPrintClick(object? sender, EventArgs? e) {
+            if (Image == null) {
+                Utils.errMsg("No image");
+                return;
+            }
             PrintPictureBox ppb = new PrintPictureBox(Image);
             ppb.showPrintDialog();
         }
 
         private void OnPrintPreviewClick(object sender, EventArgs e) {
+            if (Image == null) {
+                Utils.errMsg("No image");
+                return;
+            }
             PrintPictureBox ppb = new PrintPictureBox(Image);
             ppb.showPrintPreview();
         }
 
         private void OnPageSetupClick(object sender, EventArgs e) {
+            if (Image == null) {
+                Utils.errMsg("No image");
+                return;
+            }
             PrintPictureBox ppb = new PrintPictureBox(Image);
             ppb.showPageSetupDialog();
         }
@@ -566,7 +680,7 @@ namespace Image_View {
             resetViewToFit();
         }
 
-        private void OnCutClick(object sender, EventArgs e) {
+        private void OnCutClick(object? sender, EventArgs? e) {
             if (Image == null) {
                 Utils.errMsg("There is no image");
                 return;
@@ -576,7 +690,7 @@ namespace Image_View {
             resetImage(null, true, null);
         }
 
-        private void OnCopyClick(object sender, EventArgs e) {
+        private void OnCopyClick(object? sender, EventArgs? e) {
             if (Image == null) {
                 Utils.errMsg("There is no image");
                 return;
@@ -588,13 +702,13 @@ namespace Image_View {
             }
         }
 
-        private void OnPasteClick(object sender, EventArgs e) {
+        private void OnPasteClick(object? sender, EventArgs? e) {
 #if DEBUG_AVAILABLE_FORMATS
             // Debug
             showAvailableDataFormats(e);
 #endif
             // FileDrop
-            Image newImage = null;
+            Image? newImage = null;
             string[] files = (string[])Clipboard.GetDataObject().GetData((DataFormats.FileDrop));
             if (files != null && files.Length > 0) {
                 // Use the first one
@@ -638,23 +752,41 @@ namespace Image_View {
             MessageBox.Show(message, title);
         }
 
+        private void OnOverviewClick(object sender, EventArgs e) {
+            // Create, show, or set visible the overview dialog as appropriate
+            if (overviewDlg == null) {
+                MainForm app = (MainForm)FindForm().FindForm();
+                overviewDlg = new ScrolledHTMLDialog(
+                    Utils.getDpiAdjustedSize(app, new Size(800, 600)),
+                    "Overview", @"Help\Overview.html");
+                overviewDlg.Show();
+            } else {
+                overviewDlg.Visible = true;
+            }
+        }
+
+        private void OnOverviewOnlineClick(object sender, EventArgs e) {
+            try {
+                Process.Start("https://kenevans.net/opensource/ImageView/Help/Overview.html");
+            } catch (Exception ex) {
+                Utils.excMsg("Failed to start browser", ex);
+            }
+        }
+
 
         private void OnLandscapeClicked(object sender, EventArgs e) {
-            string title = "OnLandscapeClick";
-            string message = "Landscape: Not implemented yet";
-            MessageBox.Show(message, title);
+            Properties.Settings.Default.Landscape = true;
         }
 
         private void OnPortraitClicked(object sender, EventArgs e) {
-            string title = "OnPortraitClick";
-            string message = "Portrait: Not implemented yet";
-            MessageBox.Show(message, title);
+            Properties.Settings.Default.Landscape = false;
         }
 
         private void OnPictureBoxMouseDown(object sender, MouseEventArgs e) {
             if (Panning) PanStart = e.Location;
             else if (Cropping) {
                 if (e.Button == System.Windows.Forms.MouseButtons.Left) {
+                    if (Image == null) return;
                     pictureBox.Refresh();
                     if (ImageCrop != null) {
                         ImageCrop.Dispose();
@@ -670,7 +802,7 @@ namespace Image_View {
                     CropPen = new Pen(Color.Black, 1);
                     CropPen.DashStyle = DashStyle.Dash;
                     CropPen.Width = getDpiAdjustedCropLineWidth();
-                    CropPen.Color = Color.Tomato;
+                    CropPen.Color = SelectionLineColor;
                 }
             }
         }
@@ -692,6 +824,7 @@ namespace Image_View {
                         + NL + "    ViewRectangle=" + ViewRectangle);
                     pictureBox.Invalidate();
                 } else if (Cropping) {
+                    if (ImageCrop == null || CropPen == null) return;
                     Debug.WriteLine("OnPictureBoxMouseMove: Cropping=" + Cropping
                         + $" CropX={CropX} CropY={CropY} CropPen={CropPen}");
                     CropWidth = e.X - CropX;
@@ -710,7 +843,8 @@ namespace Image_View {
             }
         }
 
-        private void OnPictureBoxMouseWheel(object sender, MouseEventArgs e) {
+        private void OnPictureBoxMouseWheel(object? sender, MouseEventArgs? e) {
+            if (e == null) return;
             Debug.WriteLine("OnPictureBoxMouseWheel: ZoomFactor=" + ZoomFactor);
             ZoomFactor *= 1 + e.Delta * MOUSE_WHEEL_ZOOM_FACTOR;
             zoomImage();
@@ -728,15 +862,20 @@ namespace Image_View {
             }
         }
 
+        private void OnToolsOptionsClick(object sender, EventArgs e) {
+            Utils.infoMsg("Not implemented yet");
+        }
+
         private void OnInfoClicked(object sender, EventArgs e) {
             string msg = "Image Information" + NL + NL;
             if (Image == null) {
                 msg += "Image Undefined" + NL;
-            } else {
-                msg += $"Width={Image.Width} Height={Image.Height}" + NL;
-                msg += $"Horizontal Resolution={Image.HorizontalResolution} Vertical Resolution={Image.VerticalResolution}" + NL;
-                msg += $"Pixel Format={Image.PixelFormat}" + NL;
+                Utils.infoMsg(msg);
+                return;
             }
+            msg += $"Width={Image.Width} Height={Image.Height}" + NL;
+            msg += $"Horizontal Resolution={Image.HorizontalResolution} Vertical Resolution={Image.VerticalResolution}" + NL;
+            msg += $"Pixel Format={Image.PixelFormat}" + NL;
             if (Image.Tag != null) {
                 msg += $"Tag={Image.Tag}" + NL;
             }
@@ -749,10 +888,9 @@ namespace Image_View {
             Utils.infoMsg(msg);
         }
 
-
         private void OnHelpAboutClicked(object sender, EventArgs e) {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Image image = null;
+            Image? image = null;
             try {
                 image = Image.FromFile(@".\Help\Image View.256x256.png");
             } catch (Exception ex) {
@@ -763,6 +901,7 @@ namespace Image_View {
         }
 
         private void OnDragEnter(object sender, DragEventArgs e) {
+            if (e == null || e.Data == null) return;
             if (e.Data.GetDataPresent(DataFormats.FileDrop) ||
                 e.Data.GetDataPresent(DataFormats.Bitmap)) {
                 e.Effect = DragDropEffects.Copy;
@@ -774,6 +913,7 @@ namespace Image_View {
         }
 
         private void OnDragDrop(object sender, DragEventArgs e) {
+            if (e.Data == null) return;
 #if DEBUG_AVAILABLE_FORMATS
             // Debug
             showAvailableDataFormats(e);
@@ -785,7 +925,7 @@ namespace Image_View {
                 resetImage(fileName, true);
                 return;
             }
-            Image image = (Bitmap)(e.Data.GetData(DataFormats.Bitmap));
+            Image? image = (Bitmap)(e.Data.GetData(DataFormats.Bitmap));
             if (image != null) {
                 resetImage(ClipboardDataTypes.BITMAP.ToString(), true, image);
                 return;

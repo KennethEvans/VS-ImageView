@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="book.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Image View</title>
+</head>
+<body>
+<h1 align="center"><strong><img src="Image View.256x256.png" alt="Logo" width="96" height="96" align="middle" /> Image View Overview</strong></h1>
+<p align="left">Image View is a C# Windows application designed to handle images, especially from screen dumps. It has a means to crop the image and to print it at the top of the page with margins you specify. Images or image files can be dragged and dropped or pasted in it. It is easy to pan and zoom, and to fit the image to the available space. You can also save the image in any of the usual file formats. </p>
+<p align="left">There are a number of keyboard shortcuts. </p>
+<p align="left"><a href="#Acknowledgements">Acknowledgements</a> are at the end of the page. </p>
+<h3 align="left">The Interface</h3>
+<p>The interface has the usual menus, a tool bar, and an area to display the image. </p>
+<p><a href="#Keyboard">Keyboard Shortcuts</a></p>
+<p><a href="#FileMenu">File Menu</a></p>
+<p><a href="#HelpMenu">Help Menu</a></p>
+<p><a href="#Toolbar"></a><a href="#ToolsMenu">Tools Menu</a></p>
+<p><a href="#Toolbar">Toolbar</a></p>
+<p><a href="#ContextMenu">Context Menu</a></p>
+
+<h3><a name="Keyboard" id="Keyboard"></a>Keyboard Shortcuts</h3>
+<table style="width:95%" align="center" border="1" bordercolor="black">
+  <!--DWLayoutTable-->
+  <tr>
+   <th style="width:15%">Key</th>
+    <th style="width:35%">Operation</th>
+    <th style="width:15%">Key</th>
+    <th style="width:35%">Operation</th>
+  </tr>
+  <tr>
+    <td>Space</td>
+    <td>Sets panning (Cursor is a hand)</td>
+    <td>Ctrl+x</td>
+    <td>Cut</td>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>Zoom in</td>
+    <td>Ctrl+c</td>
+    <td>Copy</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>Zoom out</td>
+    <td>Ctrl+v</td>
+    <td>Paste</td>
+  </tr>
+  <tr>
+    <td>Ctrl+0</td>
+    <td>Fit</td>
+    <td>Ctr+p</td>
+    <td>Print</td>
+  </tr>
+  <tr>
+    <td>Ctrl+1</td>
+    <td>Actual pixels</td>
+    <td>Ctrl+b</td>
+    <td>Paste then print</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Down</td>
+    <td>Expand clip rectangle height, top stays fixed</td>
+    <td>Ctrl+Down</td>
+    <td>Move clip rectangle down</td>
+  </tr>
+  <tr>
+    <td>Right</td>
+    <td>Expand clip rectangle width, left stays fixed</td>
+    <td>Ctrl+Right</td>
+    <td>Move clip rectangle right </td>
+  </tr>
+  <tr>
+    <td>Left</td>
+    <td>Shrink clip rectangle width, left stays fixed</td>
+    <td>Ctrl+Left</td>
+    <td>Move clip rectangle left </td>
+  </tr>
+</table>
+<h3><a name="FileMenu" id="FileMenu"></a>File Menu </h3>
+<blockquote>
+  <h3>Open Image </h3>
+  <p>Opens an image from the file system. </p>
+  <h3>Save </h3>
+  <p>Saves the image to the file system. It is the same as Save As. </p>
+  <h3>Save As </h3>
+  <p>Saves the image to the file system. It can save in most of the common formats. The format will be determined from the extension of the file name you specify. The default is PNG. For JPEG you are prompted for the quality (0-100). The default value is 50%. </p>
+  <h3>Print </h3>
+  <p>Prints the current image. </p>
+  <h3>Print Preview  </h3>
+  <p>Shows a preview of the current image. </p>
+  <h3>Print Setup  </h3>
+  <p>Allows you to specify the margins and whether to use Landscape or Portrait. What you specify is saved for next time. </p>
+  <h3>Exit</h3>
+  <p>Exits the application. </p>
+</blockquote>
+<h3><a name="ToolsMenu" id="ToolsMenu"></a>Tools Menu </h3>
+<blockquote>
+  <h3>Options</h3>
+  <p>You can specify settings which are save between sessions. </p>
+</blockquote>
+<h3><a name="HelpMenu" id="HelpMenu"></a>Help Menu </h3>
+<blockquote>
+  <h3><strong>Image Information </strong></h3>
+  <p>Shows information about the current image . </p>
+  <h3><strong>Overview</strong></h3>
+  <p>Brings up a window with this HTML file. It works as a rudimentary browser with links and Back and Forward buttons. </p>
+  <h3>About</h3>
+  <p>Gives information about this application including the version. </p>
+</blockquote>
+<h3><a name="Toolbar" id="Toolbar"></a>Toolbar</h3>
+<blockquote>
+  <h3>Standard Open, Save, Print, Cut, Copy, Paste, and Help Icons ></h3>
+  <h3>Fit</h3>
+  <p>Fits the image to the available space . </p>
+  <h3>Actual Pixels </h3>
+  <p>Shows the image at full resolution. </p>
+  <h3>Reset</h3>
+  <p>Resets the image to as loaded. Undoes any cropping. </p>
+  <h3>Pan</h3>
+  <p>Sets panning. The cursor  a hand. </p>
+  <h3>Crop</h3>
+  <p>Sets it to crop. The cursor becomes a cross hair. Dragging the cursor creates a crop rectangle. Cropping can be cancelled or actually performed via the Context Menu.  You can zoom and pan while setting up the crop rectangle, and there are keyboard shortcuts to refine the crop rectangle.</p>
+  <h3>Zoom</h3>
+  <p>Zooms to specific values . </p>
+  <h3>Landscape </h3>
+  <p>Sets printing to be Landscape. </p>
+  <h3>Portrait</h3>
+  <p>Sets printing to be Portrait. </p>
+</blockquote>
+
+  <h3><a name="ContextMenu" id="ContextMenu"></a>Context Menu</h3>
+  <blockquote>
+    <h3>Fit</h3>
+    <p>Fits the image to the available space . </p>
+    <h3>Zoom</h3>
+    <p>Zooms to specific values . </p>
+    <h3>Pan</h3>
+    <p>Allows moving the cursor to pan. he cursor is a hand. </p>
+    <h3>Reset</h3>
+    <p>Resets the image to as loaded. Undoes any cropping. </p>
+    <h3>Cancel Crop </h3>
+    <p>Cancels cropping . </p>
+    <h3>Do Crop </h3>
+    <p>Crops to the current crop rectangle . </p>
+  </blockquote>
+
+<h3>Installation</h3>
+<p>If you are installing from a download, just unzip the files into a directory somewhere convenient. Then run it from there. If you are installing from a build, copy these files and directories from the bin/Release directory to a convenient directory.</p>
+<ul>
+  <li>Image View.exe, .pdb, and possible other support files </li>
+  <li>Utils.dll and .pdb </li>
+  <li>Help (directory) </li>
+</ul>
+<p>To uninstall, just delete these files.</p>
+<h3><a name="Acknowledgements" id="Acknowledgements"></a><strong>Acknowledgements</strong></h3>
+<p>Uses Utils from <a href="https://github.com/KennethEvans/VS-Utils">https://github.com/KennethEvans/VS-Utils</a>.</p>
+</body>
+</html>

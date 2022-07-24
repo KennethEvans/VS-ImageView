@@ -746,34 +746,6 @@ namespace Image_View {
             Utils.errMsg("Clipboard does not contain an image");
         }
 
-        private void OnHelpClick(object sender, EventArgs e) {
-            string title = "OnHelpClick";
-            string message = "Help: Not implemented yet";
-            MessageBox.Show(message, title);
-        }
-
-        private void OnOverviewClick(object sender, EventArgs e) {
-            // Create, show, or set visible the overview dialog as appropriate
-            if (overviewDlg == null) {
-                MainForm app = (MainForm)FindForm().FindForm();
-                overviewDlg = new ScrolledHTMLDialog(
-                    Utils.getDpiAdjustedSize(app, new Size(800, 600)),
-                    "Overview", @"Help\Overview.html");
-                overviewDlg.Show();
-            } else {
-                overviewDlg.Visible = true;
-            }
-        }
-
-        private void OnOverviewOnlineClick(object sender, EventArgs e) {
-            try {
-                Process.Start("https://kenevans.net/opensource/ImageView/Help/Overview.html");
-            } catch (Exception ex) {
-                Utils.excMsg("Failed to start browser", ex);
-            }
-        }
-
-
         private void OnLandscapeClicked(object sender, EventArgs e) {
             Properties.Settings.Default.Landscape = true;
         }
@@ -886,6 +858,36 @@ namespace Image_View {
                 msg += FileName;
             }
             Utils.infoMsg(msg);
+        }
+
+        private void OnHelpClick(object sender, EventArgs e) {
+            OnHelpOverviewClick(null, null);
+        }
+
+        private void OnHelpOverviewClick(object? sender, EventArgs? e) {
+            // Create, show, or set visible the overview dialog as appropriate
+            if (overviewDlg == null) {
+                MainForm app = (MainForm)FindForm().FindForm();
+                overviewDlg = new ScrolledHTMLDialog(
+                    Utils.getDpiAdjustedSize(app, new Size(800, 600)),
+                    "Overview", @"Help\Overview.html");
+                overviewDlg.Show();
+            } else {
+                overviewDlg.Visible = true;
+            }
+        }
+
+        private void OnHelpOverviewOnlineClick(object sender, EventArgs e) {
+            try {
+                // This form of Process.Start is apparently needed for .NET
+                // (as opposed to .NET Framework)
+                Process.Start(new ProcessStartInfo {
+                    FileName = "https://kenevans.net/opensource/ImageView/Help/Overview.html",
+                    UseShellExecute = true 
+                });
+            } catch (Exception ex) {
+                Utils.excMsg("Failed to start browser", ex);
+            }
         }
 
         private void OnHelpAboutClicked(object sender, EventArgs e) {

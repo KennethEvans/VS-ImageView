@@ -245,14 +245,14 @@
             this.overviewToolStripMenuItem.Name = "overviewToolStripMenuItem";
             this.overviewToolStripMenuItem.Size = new System.Drawing.Size(451, 54);
             this.overviewToolStripMenuItem.Text = "Overview...";
-            this.overviewToolStripMenuItem.Click += new System.EventHandler(this.OnOverviewClick);
+            this.overviewToolStripMenuItem.Click += new System.EventHandler(this.OnHelpOverviewClick);
             // 
             // overviewOnlineToolStripMenuItem
             // 
             this.overviewOnlineToolStripMenuItem.Name = "overviewOnlineToolStripMenuItem";
             this.overviewOnlineToolStripMenuItem.Size = new System.Drawing.Size(451, 54);
             this.overviewOnlineToolStripMenuItem.Text = "Overview Online...";
-            this.overviewOnlineToolStripMenuItem.Click += new System.EventHandler(this.OnOverviewOnlineClick);
+            this.overviewOnlineToolStripMenuItem.Click += new System.EventHandler(this.OnHelpOverviewOnlineClick);
             // 
             // aboutToolStripMenuItem
             // 

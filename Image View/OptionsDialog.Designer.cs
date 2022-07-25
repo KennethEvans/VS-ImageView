@@ -58,11 +58,8 @@
             this.buttonUseSaved = new System.Windows.Forms.Button();
             this.buttonPreferences = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonOkButton = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelTop.SuspendLayout();
@@ -81,7 +78,6 @@
             this.tableLayoutSelectionLineWidth.SuspendLayout();
             this.flowLayoutPanelButtons.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelTop
@@ -105,7 +101,7 @@
             this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanelTop.Size = new System.Drawing.Size(773, 758);
+            this.tableLayoutPanelTop.Size = new System.Drawing.Size(858, 762);
             this.tableLayoutPanelTop.TabIndex = 0;
             // 
             // groupBoxPrinting
@@ -118,8 +114,8 @@
             this.groupBoxPrinting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxPrinting.Name = "groupBoxPrinting";
             this.groupBoxPrinting.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxPrinting.Size = new System.Drawing.Size(767, 363);
-            this.groupBoxPrinting.TabIndex = 1;
+            this.groupBoxPrinting.Size = new System.Drawing.Size(852, 363);
+            this.groupBoxPrinting.TabIndex = 0;
             this.groupBoxPrinting.TabStop = false;
             this.groupBoxPrinting.Text = "Printing";
             // 
@@ -141,7 +137,7 @@
             this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanelPrinting.Size = new System.Drawing.Size(725, 271);
+            this.tableLayoutPanelPrinting.Size = new System.Drawing.Size(810, 271);
             this.tableLayoutPanelPrinting.TabIndex = 0;
             // 
             // groupBoxMargins
@@ -154,8 +150,8 @@
             this.groupBoxMargins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxMargins.Name = "groupBoxMargins";
             this.groupBoxMargins.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxMargins.Size = new System.Drawing.Size(719, 210);
-            this.groupBoxMargins.TabIndex = 2;
+            this.groupBoxMargins.Size = new System.Drawing.Size(804, 210);
+            this.groupBoxMargins.TabIndex = 0;
             this.groupBoxMargins.TabStop = false;
             this.groupBoxMargins.Text = "Margins";
             // 
@@ -181,7 +177,7 @@
             this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelMargins.Size = new System.Drawing.Size(677, 118);
+            this.tableLayoutPanelMargins.Size = new System.Drawing.Size(762, 118);
             this.tableLayoutPanelMargins.TabIndex = 0;
             // 
             // tableLayoutPanelMarginsLeft
@@ -202,7 +198,7 @@
             this.tableLayoutPanelMarginsLeft.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsLeft.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsLeft.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsLeft.Size = new System.Drawing.Size(322, 53);
+            this.tableLayoutPanelMarginsLeft.Size = new System.Drawing.Size(365, 53);
             this.tableLayoutPanelMarginsLeft.TabIndex = 0;
             // 
             // labelLeft
@@ -217,16 +213,16 @@
             this.labelLeft.TabIndex = 0;
             this.labelLeft.Text = "Left";
             this.labelLeft.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelLeft, "The left margin");
+            this.toolTip.SetToolTip(this.labelLeft, "The left margin (floating point).");
             // 
             // textBoxLeft
             // 
             this.textBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxLeft.Location = new System.Drawing.Point(76, 3);
             this.textBoxLeft.Name = "textBoxLeft";
-            this.textBoxLeft.Size = new System.Drawing.Size(243, 47);
-            this.textBoxLeft.TabIndex = 0;
-            this.toolTip.SetToolTip(this.textBoxLeft, "The left margin");
+            this.textBoxLeft.Size = new System.Drawing.Size(286, 47);
+            this.textBoxLeft.TabIndex = 6;
+            this.toolTip.SetToolTip(this.textBoxLeft, "The left margin (floating point).");
             // 
             // tableLayoutPanelMarginsRight
             // 
@@ -240,13 +236,13 @@
             this.tableLayoutPanelMarginsRight.Controls.Add(this.labelRight, 0, 0);
             this.tableLayoutPanelMarginsRight.Controls.Add(this.textBoxRight, 1, 0);
             this.tableLayoutPanelMarginsRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMarginsRight.Location = new System.Drawing.Point(341, 3);
+            this.tableLayoutPanelMarginsRight.Location = new System.Drawing.Point(384, 3);
             this.tableLayoutPanelMarginsRight.Name = "tableLayoutPanelMarginsRight";
             this.tableLayoutPanelMarginsRight.RowCount = 3;
             this.tableLayoutPanelMarginsRight.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsRight.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsRight.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsRight.Size = new System.Drawing.Size(323, 53);
+            this.tableLayoutPanelMarginsRight.Size = new System.Drawing.Size(365, 53);
             this.tableLayoutPanelMarginsRight.TabIndex = 3;
             // 
             // labelRight
@@ -261,18 +257,16 @@
             this.labelRight.TabIndex = 0;
             this.labelRight.Text = "Right";
             this.labelRight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelRight, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.toolTip.SetToolTip(this.labelRight, "The right margin (floating point).");
             // 
             // textBoxRight
             // 
             this.textBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxRight.Location = new System.Drawing.Point(97, 3);
             this.textBoxRight.Name = "textBoxRight";
-            this.textBoxRight.Size = new System.Drawing.Size(223, 47);
-            this.textBoxRight.TabIndex = 0;
-            this.toolTip.SetToolTip(this.textBoxRight, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.textBoxRight.Size = new System.Drawing.Size(265, 47);
+            this.textBoxRight.TabIndex = 8;
+            this.toolTip.SetToolTip(this.textBoxRight, "The right margin (floating point).");
             // 
             // tableLayoutPanelMarginsTop
             // 
@@ -292,7 +286,7 @@
             this.tableLayoutPanelMarginsTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsTop.Size = new System.Drawing.Size(322, 53);
+            this.tableLayoutPanelMarginsTop.Size = new System.Drawing.Size(365, 53);
             this.tableLayoutPanelMarginsTop.TabIndex = 2;
             // 
             // labelTop
@@ -304,21 +298,19 @@
             this.labelTop.Location = new System.Drawing.Point(3, 0);
             this.labelTop.Name = "labelTop";
             this.labelTop.Size = new System.Drawing.Size(67, 53);
-            this.labelTop.TabIndex = 1;
+            this.labelTop.TabIndex = 0;
             this.labelTop.Text = "Top";
             this.labelTop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelTop, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.toolTip.SetToolTip(this.labelTop, "The top margin (floating point).");
             // 
             // textBoxTop
             // 
             this.textBoxTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxTop.Location = new System.Drawing.Point(76, 3);
             this.textBoxTop.Name = "textBoxTop";
-            this.textBoxTop.Size = new System.Drawing.Size(243, 47);
-            this.textBoxTop.TabIndex = 0;
-            this.toolTip.SetToolTip(this.textBoxTop, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.textBoxTop.Size = new System.Drawing.Size(286, 47);
+            this.textBoxTop.TabIndex = 7;
+            this.toolTip.SetToolTip(this.textBoxTop, "The left margin (floating point).");
             // 
             // tableLayoutPanelMarginsBottom
             // 
@@ -332,13 +324,13 @@
             this.tableLayoutPanelMarginsBottom.Controls.Add(this.labelBottom, 0, 0);
             this.tableLayoutPanelMarginsBottom.Controls.Add(this.textBoxBottom, 1, 0);
             this.tableLayoutPanelMarginsBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMarginsBottom.Location = new System.Drawing.Point(341, 62);
+            this.tableLayoutPanelMarginsBottom.Location = new System.Drawing.Point(384, 62);
             this.tableLayoutPanelMarginsBottom.Name = "tableLayoutPanelMarginsBottom";
             this.tableLayoutPanelMarginsBottom.RowCount = 3;
             this.tableLayoutPanelMarginsBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMarginsBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsBottom.Size = new System.Drawing.Size(323, 53);
+            this.tableLayoutPanelMarginsBottom.Size = new System.Drawing.Size(365, 53);
             this.tableLayoutPanelMarginsBottom.TabIndex = 1;
             // 
             // labelBottom
@@ -353,18 +345,16 @@
             this.labelBottom.TabIndex = 0;
             this.labelBottom.Text = "Bottom";
             this.labelBottom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelBottom, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.toolTip.SetToolTip(this.labelBottom, "The bottom margin (floating point).");
             // 
             // textBoxBottom
             // 
             this.textBoxBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxBottom.Location = new System.Drawing.Point(126, 3);
             this.textBoxBottom.Name = "textBoxBottom";
-            this.textBoxBottom.Size = new System.Drawing.Size(194, 47);
-            this.textBoxBottom.TabIndex = 0;
-            this.toolTip.SetToolTip(this.textBoxBottom, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.textBoxBottom.Size = new System.Drawing.Size(236, 47);
+            this.textBoxBottom.TabIndex = 9;
+            this.toolTip.SetToolTip(this.textBoxBottom, "The bottom margin (floating point).");
             // 
             // checkBoxLandscape
             // 
@@ -373,9 +363,9 @@
             this.checkBoxLandscape.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxLandscape.Name = "checkBoxLandscape";
             this.checkBoxLandscape.Size = new System.Drawing.Size(196, 45);
-            this.checkBoxLandscape.TabIndex = 1;
+            this.checkBoxLandscape.TabIndex = 10;
             this.checkBoxLandscape.Text = "Landscape";
-            this.toolTip.SetToolTip(this.checkBoxLandscape, "Prompt to overwrite if the KML file exists.");
+            this.toolTip.SetToolTip(this.checkBoxLandscape, "Whether to use landscape or portrait.");
             this.checkBoxLandscape.UseVisualStyleBackColor = true;
             // 
             // groupBoxInterface
@@ -388,8 +378,8 @@
             this.groupBoxInterface.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxInterface.Name = "groupBoxInterface";
             this.groupBoxInterface.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxInterface.Size = new System.Drawing.Size(767, 269);
-            this.groupBoxInterface.TabIndex = 2;
+            this.groupBoxInterface.Size = new System.Drawing.Size(852, 269);
+            this.groupBoxInterface.TabIndex = 0;
             this.groupBoxInterface.TabStop = false;
             this.groupBoxInterface.Text = "Interface";
             // 
@@ -413,7 +403,7 @@
             this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInterface.Size = new System.Drawing.Size(725, 177);
+            this.tableLayoutPanelInterface.Size = new System.Drawing.Size(810, 177);
             this.tableLayoutPanelInterface.TabIndex = 0;
             // 
             // tableLayoutPanelCustomZoom
@@ -434,7 +424,7 @@
             this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomZoom.Size = new System.Drawing.Size(699, 53);
+            this.tableLayoutPanelCustomZoom.Size = new System.Drawing.Size(784, 53);
             this.tableLayoutPanelCustomZoom.TabIndex = 2;
             // 
             // labelCustomZoom
@@ -449,16 +439,16 @@
             this.labelCustomZoom.TabIndex = 0;
             this.labelCustomZoom.Text = "Custom Zoom";
             this.labelCustomZoom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelCustomZoom, "URL for the icon. See http://kml4earth.appspot.com/icons.html.");
+            this.toolTip.SetToolTip(this.labelCustomZoom, "Magnification value for custom zoom in % (floating-point).");
             // 
             // textBoxCustomZoom
             // 
             this.textBoxCustomZoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxCustomZoom.Location = new System.Drawing.Point(217, 3);
             this.textBoxCustomZoom.Name = "textBoxCustomZoom";
-            this.textBoxCustomZoom.Size = new System.Drawing.Size(479, 47);
-            this.textBoxCustomZoom.TabIndex = 1;
-            this.toolTip.SetToolTip(this.textBoxCustomZoom, "URL for the icon. See http://kml4earth.appspot.com/icons.html.");
+            this.textBoxCustomZoom.Size = new System.Drawing.Size(564, 47);
+            this.textBoxCustomZoom.TabIndex = 13;
+            this.toolTip.SetToolTip(this.textBoxCustomZoom, "Magnification value for custom zoom in % (floating-point).");
             // 
             // tableLayoutSelectionColor
             // 
@@ -478,7 +468,7 @@
             this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionColor.Size = new System.Drawing.Size(699, 53);
+            this.tableLayoutSelectionColor.Size = new System.Drawing.Size(784, 53);
             this.tableLayoutSelectionColor.TabIndex = 0;
             // 
             // selectionColor
@@ -489,20 +479,20 @@
             this.selectionColor.BackColor = System.Drawing.SystemColors.Control;
             this.selectionColor.Location = new System.Drawing.Point(3, 0);
             this.selectionColor.Name = "selectionColor";
-            this.selectionColor.Size = new System.Drawing.Size(219, 53);
+            this.selectionColor.Size = new System.Drawing.Size(357, 53);
             this.selectionColor.TabIndex = 0;
-            this.selectionColor.Text = "Selection Color";
+            this.selectionColor.Text = "Selection Rectangle Color";
             this.selectionColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.selectionColor, "URL for the icon. See http://kml4earth.appspot.com/icons.html.");
+            this.toolTip.SetToolTip(this.selectionColor, "The color of the selection rectangle.");
             // 
             // textBoxSelectionLineColor
             // 
             this.textBoxSelectionLineColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSelectionLineColor.Location = new System.Drawing.Point(228, 3);
+            this.textBoxSelectionLineColor.Location = new System.Drawing.Point(366, 3);
             this.textBoxSelectionLineColor.Name = "textBoxSelectionLineColor";
-            this.textBoxSelectionLineColor.Size = new System.Drawing.Size(468, 47);
-            this.textBoxSelectionLineColor.TabIndex = 1;
-            this.toolTip.SetToolTip(this.textBoxSelectionLineColor, "URL for the icon. See http://kml4earth.appspot.com/icons.html.");
+            this.textBoxSelectionLineColor.Size = new System.Drawing.Size(415, 47);
+            this.textBoxSelectionLineColor.TabIndex = 11;
+            this.toolTip.SetToolTip(this.textBoxSelectionLineColor, "The color of the selection rectangle.\r");
             // 
             // tableLayoutSelectionLineWidth
             // 
@@ -522,7 +512,7 @@
             this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionLineWidth.Size = new System.Drawing.Size(699, 53);
+            this.tableLayoutSelectionLineWidth.Size = new System.Drawing.Size(784, 53);
             this.tableLayoutSelectionLineWidth.TabIndex = 1;
             // 
             // labelSelectionLineWidth
@@ -537,16 +527,16 @@
             this.labelSelectionLineWidth.TabIndex = 0;
             this.labelSelectionLineWidth.Text = "Selection Line Width";
             this.labelSelectionLineWidth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelSelectionLineWidth, "URL for the icon. See http://kml4earth.appspot.com/icons.html.");
+            this.toolTip.SetToolTip(this.labelSelectionLineWidth, "The width of the selection rectangle line.");
             // 
             // textBoxSelectionLineWidth
             // 
             this.textBoxSelectionLineWidth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxSelectionLineWidth.Location = new System.Drawing.Point(298, 3);
             this.textBoxSelectionLineWidth.Name = "textBoxSelectionLineWidth";
-            this.textBoxSelectionLineWidth.Size = new System.Drawing.Size(398, 47);
-            this.textBoxSelectionLineWidth.TabIndex = 1;
-            this.toolTip.SetToolTip(this.textBoxSelectionLineWidth, "URL for the icon. See http://kml4earth.appspot.com/icons.html.");
+            this.textBoxSelectionLineWidth.Size = new System.Drawing.Size(483, 47);
+            this.textBoxSelectionLineWidth.TabIndex = 12;
+            this.toolTip.SetToolTip(this.textBoxSelectionLineWidth, "The width of the selection rectangle line.");
             // 
             // flowLayoutPanelButtons
             // 
@@ -558,10 +548,11 @@
             this.flowLayoutPanelButtons.Controls.Add(this.buttonUseSaved);
             this.flowLayoutPanelButtons.Controls.Add(this.buttonPreferences);
             this.flowLayoutPanelButtons.Controls.Add(this.buttonCancel);
-            this.flowLayoutPanelButtons.Location = new System.Drawing.Point(67, 674);
+            this.flowLayoutPanelButtons.Controls.Add(this.buttonOkButton);
+            this.flowLayoutPanelButtons.Location = new System.Drawing.Point(74, 674);
             this.flowLayoutPanelButtons.Margin = new System.Windows.Forms.Padding(3, 26, 3, 26);
             this.flowLayoutPanelButtons.Name = "flowLayoutPanelButtons";
-            this.flowLayoutPanelButtons.Size = new System.Drawing.Size(638, 57);
+            this.flowLayoutPanelButtons.Size = new System.Drawing.Size(709, 57);
             this.flowLayoutPanelButtons.TabIndex = 0;
             this.flowLayoutPanelButtons.WrapContents = false;
             // 
@@ -573,9 +564,9 @@
             this.buttonUseDefaults.Location = new System.Drawing.Point(3, 3);
             this.buttonUseDefaults.Name = "buttonUseDefaults";
             this.buttonUseDefaults.Size = new System.Drawing.Size(194, 51);
-            this.buttonUseDefaults.TabIndex = 2;
+            this.buttonUseDefaults.TabIndex = 3;
             this.buttonUseDefaults.Text = "Use Defaults";
-            this.toolTip.SetToolTip(this.buttonUseDefaults, "Use the default settings.");
+            this.toolTip.SetToolTip(this.buttonUseDefaults, "Load the default settings.");
             this.buttonUseDefaults.UseVisualStyleBackColor = true;
             this.buttonUseDefaults.Click += new System.EventHandler(this.OnUseDefaultsClick);
             // 
@@ -587,9 +578,9 @@
             this.buttonUseSaved.Location = new System.Drawing.Point(203, 3);
             this.buttonUseSaved.Name = "buttonUseSaved";
             this.buttonUseSaved.Size = new System.Drawing.Size(165, 51);
-            this.buttonUseSaved.TabIndex = 3;
+            this.buttonUseSaved.TabIndex = 4;
             this.buttonUseSaved.Text = "Use Saved";
-            this.toolTip.SetToolTip(this.buttonUseSaved, "Use the last saved settings.");
+            this.toolTip.SetToolTip(this.buttonUseSaved, "Load the last saved settings.");
             this.buttonUseSaved.UseVisualStyleBackColor = true;
             this.buttonUseSaved.Click += new System.EventHandler(this.OnUseSavedClick);
             // 
@@ -601,7 +592,7 @@
             this.buttonPreferences.Location = new System.Drawing.Point(374, 3);
             this.buttonPreferences.Name = "buttonPreferences";
             this.buttonPreferences.Size = new System.Drawing.Size(89, 51);
-            this.buttonPreferences.TabIndex = 4;
+            this.buttonPreferences.TabIndex = 5;
             this.buttonPreferences.Text = "Save";
             this.toolTip.SetToolTip(this.buttonPreferences, "Save the current settings.");
             this.buttonPreferences.UseVisualStyleBackColor = true;
@@ -612,62 +603,33 @@
             this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonCancel.Location = new System.Drawing.Point(519, 3);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(53, 3, 3, 3);
+            this.buttonCancel.Location = new System.Drawing.Point(516, 3);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(116, 51);
-            this.buttonCancel.TabIndex = 1;
+            this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.toolTip.SetToolTip(this.buttonCancel, "Cancel. No settings are changed.");
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.OnCancelClick);
             // 
-            // textBox1
+            // buttonOkButton
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(134, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 47);
-            this.textBox1.TabIndex = 0;
-            this.toolTip.SetToolTip(this.textBox1, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.buttonOkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonOkButton.AutoSize = true;
+            this.buttonOkButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonOkButton.Location = new System.Drawing.Point(638, 3);
+            this.buttonOkButton.Name = "buttonOkButton";
+            this.buttonOkButton.Size = new System.Drawing.Size(68, 51);
+            this.buttonOkButton.TabIndex = 1;
+            this.buttonOkButton.Text = "OK";
+            this.toolTip.SetToolTip(this.buttonOkButton, "Save current settings and exit.");
+            this.buttonOkButton.UseVisualStyleBackColor = true;
+            this.buttonOkButton.Click += new System.EventHandler(this.OnOkClick);
             // 
-            // label1
+            // toolTip
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 53);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Margins";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.label1, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 63);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 45);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Landscape";
-            this.toolTip.SetToolTip(this.checkBox1, "Prompt to overwrite if the KML file exists.");
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(76, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 47);
-            this.textBox3.TabIndex = 0;
-            this.toolTip.SetToolTip(this.textBox3, "The name of the file where the KML will be saved. You can use environment strings" +
-        " like %temp%.");
+            this.toolTip.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip_Popup);
             // 
             // tableLayoutPanel1
             // 
@@ -695,8 +657,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -704,19 +664,21 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(194, 53);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(194, 1);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // OptionsDialog
             // 
+            this.AcceptButton = this.buttonOkButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 758);
+            this.ClientSize = new System.Drawing.Size(858, 762);
             this.Controls.Add(this.tableLayoutPanelTop);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "OptionsDialog";
             this.ShowIcon = false;
             this.Text = "Options";
+            this.Load += new System.EventHandler(this.OptionsDialog_Load);
             this.tableLayoutPanelTop.ResumeLayout(false);
             this.tableLayoutPanelTop.PerformLayout();
             this.groupBoxPrinting.ResumeLayout(false);
@@ -749,8 +711,6 @@
             this.flowLayoutPanelButtons.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -791,13 +751,10 @@
         private TextBox textBoxBottom;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private TextBox textBox1;
-        private Label label1;
-        private CheckBox checkBox1;
-        private TextBox textBox3;
         private Label labelTop;
         private TableLayoutPanel tableLayoutPanelCustomZoom;
         private Label labelCustomZoom;
         private TextBox textBoxCustomZoom;
+        private Button buttonOkButton;
     }
 }

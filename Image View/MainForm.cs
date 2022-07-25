@@ -85,6 +85,7 @@ namespace Image_View {
             this.MouseWheel += new MouseEventHandler(OnPictureBoxMouseWheel);
 
             // Settings
+            setValuesFromSettings();
             SelectionLineWidth = Properties.Settings.Default.SelectionLineWidth;
             string hexColor = Properties.Settings.Default.SelectionLineColor;
             try {
@@ -92,6 +93,20 @@ namespace Image_View {
             } catch (Exception) {
                 SelectionLineColor = Color.Tomato;
             }
+        }
+
+       /// <summary>
+       /// Set the properties in this form that come from settings.
+       /// </summary>
+       private void setValuesFromSettings() {
+            SelectionLineWidth = Properties.Settings.Default.SelectionLineWidth;
+            string hexColor = Properties.Settings.Default.SelectionLineColor;
+            try {
+                SelectionLineColor = System.Drawing.ColorTranslator.FromHtml(hexColor);
+            } catch (Exception) {
+                SelectionLineColor = Color.Tomato;
+            }
+            CustomZoomPercent = Properties.Settings.Default.CustomZoomPercent;
         }
 
         private void zoomImage() {
@@ -868,13 +883,13 @@ namespace Image_View {
                 OptionsDialog dlg = new OptionsDialog();
                 DialogResult res = dlg.ShowDialog();
                 if (res != DialogResult.OK) return;
-                // TODO
+                setValuesFromSettings();
             } catch (Exception ex) {
-                Utils.excMsg("Failed to send checked files to Google Earth", ex);
+                Utils.excMsg("Failed to set Options", ex);
             }
         }
 
-    private void OnInfoClicked(object sender, EventArgs e) {
+        private void OnInfoClicked(object sender, EventArgs e) {
             string msg = "Image Information" + NL + NL;
             if (Image == null) {
                 msg += "Image Undefined" + NL;

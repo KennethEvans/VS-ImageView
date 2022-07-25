@@ -1,6 +1,4 @@
-﻿using KEUtils.Utils;
-using System.ComponentModel;
-using System.Configuration;
+﻿using System.ComponentModel;
 using System.Drawing.Printing;
 
 namespace Image_View {
@@ -10,11 +8,6 @@ namespace Image_View {
     /// DialogResult.OK.
     /// </summary>
     public partial class OptionsDialog : Form {
-        ///// <summary>
-        ///// This property is only set in OnOkClick.
-        ///// </summary>
-        //public OptionsDialog Options { get; set; }
-
         /// <summary>
         /// CTOR that initializes the controls from Settings.
         /// </summary>
@@ -25,16 +18,6 @@ namespace Image_View {
             Options options = getOptionsFromSavedSettings();
             setControlsFromOptions(options);
         }
-
-        ///// <summary>
-        ///// CTOR that initializes the controls from the given Options.
-        ///// </summary>
-        ///// <param name="options">The Options to use.</param>
-        //public OptionsDialog(OptionsDialog options) {
-        //    InitializeComponent();
-
-        //    getControlsFromOptions(options);
-        //}
 
         /// <summary>
         /// Gets the controls from the given Options.
@@ -151,8 +134,9 @@ namespace Image_View {
         }
 
         private void OnOkClick(object sender, System.EventArgs e) {
-            //// This is the only place Options is set.
-            //Options options = getOptionsFromDialog();
+            Options options = getOptionsFromControls();
+            setSettingsFromOptions(options);
+            Properties.Settings.Default.Save();
             DialogResult = DialogResult.OK;
             Visible = false;
         }
@@ -183,6 +167,14 @@ namespace Image_View {
             var type = property.PropertyType;
             var defaultValue = property.DefaultValue;
             return TypeDescriptor.GetConverter(type).ConvertFrom(defaultValue);
+        }
+
+        private void OptionsDialog_Load(object sender, EventArgs e) {
+
+        }
+
+        private void toolTip_Popup(object sender, PopupEventArgs e) {
+
         }
     }
 

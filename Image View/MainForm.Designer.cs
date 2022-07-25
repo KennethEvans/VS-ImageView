@@ -388,7 +388,7 @@
             this.fitToolStripButton.Name = "fitToolStripButton";
             this.fitToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.fitToolStripButton.Text = "Fit";
-            this.fitToolStripButton.ToolTipText = "Fit image to the visible area";
+            this.fitToolStripButton.ToolTipText = "Fit image to the visible area.";
             this.fitToolStripButton.Click += new System.EventHandler(this.OnFitClicked);
             // 
             // fullscreenToolStripButton
@@ -399,7 +399,7 @@
             this.fullscreenToolStripButton.Name = "fullscreenToolStripButton";
             this.fullscreenToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.fullscreenToolStripButton.Text = "Fullscreen";
-            this.fullscreenToolStripButton.ToolTipText = "Show image with actual pixels";
+            this.fullscreenToolStripButton.ToolTipText = "Show image with actual pixels.";
             this.fullscreenToolStripButton.Click += new System.EventHandler(this.OnFullscreenClick);
             // 
             // resetToolStripButton
@@ -409,7 +409,7 @@
             this.resetToolStripButton.Name = "resetToolStripButton";
             this.resetToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.resetToolStripButton.Text = "Reset";
-            this.resetToolStripButton.ToolTipText = "Reset the image to as opened";
+            this.resetToolStripButton.ToolTipText = "Reset the image to as opened.";
             this.resetToolStripButton.Click += new System.EventHandler(this.OnResetClick);
             // 
             // toolStripSeparator6
@@ -425,7 +425,7 @@
             this.handToolStripButton.Name = "handToolStripButton";
             this.handToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.handToolStripButton.Text = "Pan";
-            this.handToolStripButton.ToolTipText = "Toggle panning";
+            this.handToolStripButton.ToolTipText = "Toggle panning.";
             this.handToolStripButton.Click += new System.EventHandler(this.OnPanClick);
             // 
             // cropToolStripButton
@@ -436,7 +436,7 @@
             this.cropToolStripButton.Name = "cropToolStripButton";
             this.cropToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.cropToolStripButton.Text = "Crop";
-            this.cropToolStripButton.ToolTipText = "Crop";
+            this.cropToolStripButton.ToolTipText = "Crop.";
             this.cropToolStripButton.Click += new System.EventHandler(this.OnCropClick);
             // 
             // zoomToolStripDropDownButton
@@ -508,7 +508,7 @@
             this.landscapeToolStripButton.Name = "landscapeToolStripButton";
             this.landscapeToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.landscapeToolStripButton.Text = "Landscape";
-            this.landscapeToolStripButton.ToolTipText = "Set the printer to use landscape";
+            this.landscapeToolStripButton.ToolTipText = "Set the printer to use landscape.";
             this.landscapeToolStripButton.Click += new System.EventHandler(this.OnLandscapeClicked);
             // 
             // portraitToolStripButton
@@ -519,7 +519,7 @@
             this.portraitToolStripButton.Name = "portraitToolStripButton";
             this.portraitToolStripButton.Size = new System.Drawing.Size(58, 44);
             this.portraitToolStripButton.Text = "Portrait";
-            this.portraitToolStripButton.ToolTipText = "Set the printer to use portrait";
+            this.portraitToolStripButton.ToolTipText = "Set the printer to use portrait.";
             this.portraitToolStripButton.Click += new System.EventHandler(this.OnPortraitClicked);
             // 
             // panelImage

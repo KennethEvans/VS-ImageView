@@ -95,10 +95,10 @@ namespace Image_View {
             }
         }
 
-       /// <summary>
-       /// Set the properties in this form that come from settings.
-       /// </summary>
-       private void setValuesFromSettings() {
+        /// <summary>
+        /// Set the properties in this form that come from settings.
+        /// </summary>
+        private void setValuesFromSettings() {
             SelectionLineWidth = Properties.Settings.Default.SelectionLineWidth;
             string hexColor = Properties.Settings.Default.SelectionLineColor;
             try {
@@ -409,7 +409,14 @@ namespace Image_View {
 #if USE_STARTUP_FILE
             // Load initial image
             string fileName = @"C:\Users\evans\Documents\Map Lines\Proud Lake\Proud Lake Hiking-Biking-Bridle Trails Map.png";
-            resetImage(fileName, true);
+            if (File.Exists(fileName)) {
+                try {
+                    resetImage(fileName, true);
+                } catch (Exception ex) {
+                    Utils.excMsg("Error opening file:" + NL + fileName, ex);
+                    return;
+                }
+            }
 #endif
         }
 

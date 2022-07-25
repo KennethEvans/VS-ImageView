@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Margins" Type="System.Drawing.Printing.Margins" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">100, 100, 100, 100</Value>
     </Setting>
     <Setting Name="Landscape" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -13,6 +13,12 @@
     </Setting>
     <Setting Name="SelectionLineColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FFFF6347</Value>
+    </Setting>
+    <Setting Name="CustomZoomPercent" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="Setting" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

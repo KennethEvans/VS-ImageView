@@ -25,6 +25,7 @@ namespace Image_View.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100, 100, 100, 100")]
         public global::System.Drawing.Printing.Margins Margins {
             get {
                 return ((global::System.Drawing.Printing.Margins)(this["Margins"]));
@@ -67,6 +68,29 @@ namespace Image_View.Properties {
             }
             set {
                 this["SelectionLineColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public float CustomZoomPercent {
+            get {
+                return ((float)(this["CustomZoomPercent"]));
+            }
+            set {
+                this["CustomZoomPercent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Point Setting {
+            get {
+                return ((global::System.Drawing.Point)(this["Setting"]));
+            }
+            set {
+                this["Setting"] = value;
             }
         }
     }

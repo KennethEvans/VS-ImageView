@@ -5,6 +5,8 @@ using KEUtils.About;
 using KEUtils.InputDialog;
 using KEUtils.ScrolledHTML;
 using KEUtils.Utils;
+using System.ComponentModel;
+using System.Configuration;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -50,6 +52,7 @@ namespace Image_View {
 
         public float SelectionLineWidth { get; set; } = 1.5f;
         public Color SelectionLineColor { get; set; } = Color.Tomato;
+        public float CustomZoomPercent { get; set; } = 100.0f;
 
         public float LeftMargin { get; set; } = 1f;
         public float RightMargin { get; set; } = 1f;
@@ -622,14 +625,40 @@ namespace Image_View {
         }
 
         private void OnZoomClick(object sender, EventArgs e) {
-            if (sender == toolStripMenuItem200) ZoomFactor = 0.5F;
-            else if (sender == toolStripMenuItem100) ZoomFactor = 1.0F;
-            else if (sender == toolStripMenuItem50) ZoomFactor = 2.0F;
-            else if (sender == toolStripMenuItem25) ZoomFactor = 4.0F;
-            else if (sender == zoom200ToolStripMenuItem) ZoomFactor = 0.5F;
-            else if (sender == zoom100ToolStripMenuItem) ZoomFactor = 1.0F;
-            else if (sender == zoom50ToolStripMenuItem) ZoomFactor = 2.0F;
-            else if (sender == zoom25ToolStripMenuItem) ZoomFactor = 4.0F;
+            if (sender == contextToolStripMenuItem200 ||
+                sender == toolbarToolStripMenuItem200) {
+                ZoomFactor = 0.5F;
+            } else if (sender == contextToolStripMenuItem100 ||
+                sender == toolbarToolStripMenuItem100) {
+                ZoomFactor = 1.0F;
+            } else if (sender == contextToolStripMenuItem50 ||
+                sender == toolbarToolStripMenuItem50) {
+                ZoomFactor = 2.0F;
+            } else if (sender == contextToolStripMenuItem25 ||
+                sender == toolbarToolStripMenuItem25) {
+                ZoomFactor = 4.0F;
+            } else if (sender == toolStripMenuItemCustom ||
+                sender == customToolStripMenuItem) {
+                string msg = "Enter the zoom factor in percent, e.g. 150";
+                InputDialog dlg = new InputDialog("Zoom Factor",
+                    msg, $"{CustomZoomPercent}");
+                DialogResult res = dlg.ShowDialog();
+                if (res == DialogResult.OK) {
+                    long quality = DEFAULT_JPEG_QUALITY;
+                    try {
+                        CustomZoomPercent = float.Parse(dlg.Value);
+                    } catch (Exception ex) {
+                        Utils.excMsg($"Error entering zoom factor. " +
+                            $"Using {CustomZoomPercent}", ex);
+                    }
+                    ZoomFactor = 100.0F / CustomZoomPercent;
+                    // Save it as a preference
+                    if (Properties.Settings.Default.CustomZoomPercent != CustomZoomPercent) {
+                        Properties.Settings.Default.CustomZoomPercent = CustomZoomPercent;
+                        Properties.Settings.Default.Save();
+                    }
+                }
+            }
             zoomImage();
         }
 
@@ -835,10 +864,17 @@ namespace Image_View {
         }
 
         private void OnToolsOptionsClick(object sender, EventArgs e) {
-            Utils.infoMsg("Not implemented yet");
+            try {
+                OptionsDialog dlg = new OptionsDialog();
+                DialogResult res = dlg.ShowDialog();
+                if (res != DialogResult.OK) return;
+                // TODO
+            } catch (Exception ex) {
+                Utils.excMsg("Failed to send checked files to Google Earth", ex);
+            }
         }
 
-        private void OnInfoClicked(object sender, EventArgs e) {
+    private void OnInfoClicked(object sender, EventArgs e) {
             string msg = "Image Information" + NL + NL;
             if (Image == null) {
                 msg += "Image Undefined" + NL;
@@ -883,7 +919,7 @@ namespace Image_View {
                 // (as opposed to .NET Framework)
                 Process.Start(new ProcessStartInfo {
                     FileName = "https://kenevans.net/opensource/ImageView/Help/Overview.html",
-                    UseShellExecute = true 
+                    UseShellExecute = true
                 });
             } catch (Exception ex) {
                 Utils.excMsg("Failed to start browser", ex);
@@ -942,6 +978,10 @@ namespace Image_View {
                     return;
                 }
             }
+        }
+
+        private void contextMenuStrip_Opening(object sender, System.ComponentModel.CancelEventArgs e) {
+
         }
     }
 }

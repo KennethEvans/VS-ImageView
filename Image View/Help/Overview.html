@@ -11,7 +11,12 @@
 <p align="left">There are a number of keyboard shortcuts. </p>
 <p align="left"><a href="#Acknowledgements">Acknowledgements</a> are at the end of the page. </p>
 <h3 align="left">The Interface</h3>
-<p>The interface has the usual menus, a tool bar, and an area to display the image. </p>
+<p>The interface has the usual menus, a toolbar, and an area to display the image.</p>
+<p>Files can be added by using the File menu, by dragging them, and by pasting them. For dragging and pasting, when dragging a file from Explorer or another location, it will be opened. If there is an image, it will be be added but without an associated file name. If is is Text, it will treated as a URL and opened if the URL is actually an image. When dragging from a browser, if the image has a link associated with it, it may be the link that gets dragged. Since the link is likely not an image file, it will fail. Images in browsers can usually be copied, however, by using the &quot;Copy image&quot; option in Chrome or the equivalent in other browsers.</p>
+<p>The image is fit to the available area when opened. It can be viewed as actual pixels or fit by using the icons on the toolbar or by using the context (right-click) menu. It can be zoomed continuously with the mouse wheel  or to specified values using the icon on the toolbar or the context menu.</p>
+<p>The image can be panned by holding the space bar or by setting Pan via the toolbar or context menu. When panning, the cursor is a hand.  </p>
+<p>The image can be cropped by setting crop via the toolbar. The cursor becomes a cross hair. Dragging the cursor creates a crop rectangle. Cropping is either cancelled or performed via the context menu.   You can zoom and pan while setting up the crop rectangle, and there are keyboard shortcuts to refine the crop rectangle. The suggested procedure would be to first align the top and right edges by moving the whole crop rectangle using Ctrl with the Up, Down, Left, and Right buttons on the keyboard. Then use these buttons with Ctrl to shrink or expand the width.</p>
+<p>You can save the image in a number of common image formats, determined by the extension you use for the file name. If the extension does not correspond to one of the supported formats, it will be saved as a PNG and the extension changed to .png. </p>
 <p><a href="#Keyboard">Keyboard Shortcuts</a></p>
 <p><a href="#FileMenu">File Menu</a></p>
 <p><a href="#HelpMenu">Help Menu</a></p>
@@ -103,8 +108,14 @@
 <h3><a name="ToolsMenu" id="ToolsMenu"></a>Tools Menu </h3>
 <blockquote>
   <h3>Options</h3>
-  <p>You can specify settings which are save between sessions. </p>
+  <p>You can specify settings which are saved between sessions. These are the buttons at the bottom. </p>
 </blockquote>
+<ul>
+  <li>Use Defaults: Set the dialog values from the original default values. </li>
+  <li>Use Save: Set the dialog values from the current saved values. </li>
+  <li>Save: Save the dialog values as the current saved values. </li>
+  <li>Cancel:  Dismiss the dialog without doing anything additional. </li>
+</ul>
 <h3><a name="HelpMenu" id="HelpMenu"></a>Help Menu </h3>
 <blockquote>
   <h3><strong>Image Information </strong></h3>
@@ -124,11 +135,11 @@
   <h3>Reset</h3>
   <p>Resets the image to as loaded. Undoes any cropping. </p>
   <h3>Pan</h3>
-  <p>Sets panning. The cursor  a hand. </p>
+  <p>Sets panning. The cursor becomes a hand. </p>
   <h3>Crop</h3>
   <p>Sets it to crop. The cursor becomes a cross hair. Dragging the cursor creates a crop rectangle. Cropping can be cancelled or actually performed via the Context Menu.  You can zoom and pan while setting up the crop rectangle, and there are keyboard shortcuts to refine the crop rectangle.</p>
   <h3>Zoom</h3>
-  <p>Zooms to specific values . </p>
+  <p>Zooms to specific values, including Custom. </p>
   <h3>Landscape </h3>
   <p>Sets printing to be Landscape. </p>
   <h3>Portrait</h3>
@@ -140,9 +151,9 @@
     <h3>Fit</h3>
     <p>Fits the image to the available space . </p>
     <h3>Zoom</h3>
-    <p>Zooms to specific values . </p>
+    <p>Zooms to specific values, including Custom. </p>
     <h3>Pan</h3>
-    <p>Allows moving the cursor to pan. he cursor is a hand. </p>
+    <p>Allows moving the cursor to pan. The cursor becomes a hand. </p>
     <h3>Reset</h3>
     <p>Resets the image to as loaded. Undoes any cropping. </p>
     <h3>Cancel Crop </h3>

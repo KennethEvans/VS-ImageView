@@ -50,6 +50,7 @@
             this.tableLayoutSelectionColor = new System.Windows.Forms.TableLayoutPanel();
             this.selectionColor = new System.Windows.Forms.Label();
             this.textBoxSelectionLineColor = new System.Windows.Forms.TextBox();
+            this.buttonColor = new System.Windows.Forms.Button();
             this.tableLayoutSelectionLineWidth = new System.Windows.Forms.TableLayoutPanel();
             this.labelSelectionLineWidth = new System.Windows.Forms.Label();
             this.textBoxSelectionLineWidth = new System.Windows.Forms.TextBox();
@@ -378,7 +379,7 @@
             this.groupBoxInterface.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxInterface.Name = "groupBoxInterface";
             this.groupBoxInterface.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxInterface.Size = new System.Drawing.Size(852, 269);
+            this.groupBoxInterface.Size = new System.Drawing.Size(852, 273);
             this.groupBoxInterface.TabIndex = 0;
             this.groupBoxInterface.TabStop = false;
             this.groupBoxInterface.Text = "Interface";
@@ -403,7 +404,7 @@
             this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInterface.Size = new System.Drawing.Size(810, 177);
+            this.tableLayoutPanelInterface.Size = new System.Drawing.Size(810, 181);
             this.tableLayoutPanelInterface.TabIndex = 0;
             // 
             // tableLayoutPanelCustomZoom
@@ -411,14 +412,14 @@
             this.tableLayoutPanelCustomZoom.AutoSize = true;
             this.tableLayoutPanelCustomZoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelCustomZoom.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanelCustomZoom.ColumnCount = 3;
+            this.tableLayoutPanelCustomZoom.ColumnCount = 2;
             this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelCustomZoom.Controls.Add(this.labelCustomZoom, 0, 0);
             this.tableLayoutPanelCustomZoom.Controls.Add(this.textBoxCustomZoom, 1, 0);
             this.tableLayoutPanelCustomZoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelCustomZoom.Location = new System.Drawing.Point(13, 121);
+            this.tableLayoutPanelCustomZoom.Location = new System.Drawing.Point(13, 125);
             this.tableLayoutPanelCustomZoom.Name = "tableLayoutPanelCustomZoom";
             this.tableLayoutPanelCustomZoom.RowCount = 3;
             this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -461,6 +462,7 @@
             this.tableLayoutSelectionColor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutSelectionColor.Controls.Add(this.selectionColor, 0, 0);
             this.tableLayoutSelectionColor.Controls.Add(this.textBoxSelectionLineColor, 1, 0);
+            this.tableLayoutSelectionColor.Controls.Add(this.buttonColor, 2, 0);
             this.tableLayoutSelectionColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutSelectionColor.Location = new System.Drawing.Point(13, 3);
             this.tableLayoutSelectionColor.Name = "tableLayoutSelectionColor";
@@ -468,7 +470,7 @@
             this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionColor.Size = new System.Drawing.Size(784, 53);
+            this.tableLayoutSelectionColor.Size = new System.Drawing.Size(784, 57);
             this.tableLayoutSelectionColor.TabIndex = 0;
             // 
             // selectionColor
@@ -479,7 +481,7 @@
             this.selectionColor.BackColor = System.Drawing.SystemColors.Control;
             this.selectionColor.Location = new System.Drawing.Point(3, 0);
             this.selectionColor.Name = "selectionColor";
-            this.selectionColor.Size = new System.Drawing.Size(357, 53);
+            this.selectionColor.Size = new System.Drawing.Size(357, 57);
             this.selectionColor.TabIndex = 0;
             this.selectionColor.Text = "Selection Rectangle Color";
             this.selectionColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -490,23 +492,36 @@
             this.textBoxSelectionLineColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxSelectionLineColor.Location = new System.Drawing.Point(366, 3);
             this.textBoxSelectionLineColor.Name = "textBoxSelectionLineColor";
-            this.textBoxSelectionLineColor.Size = new System.Drawing.Size(415, 47);
+            this.textBoxSelectionLineColor.Size = new System.Drawing.Size(302, 47);
             this.textBoxSelectionLineColor.TabIndex = 11;
             this.toolTip.SetToolTip(this.textBoxSelectionLineColor, "The color of the selection rectangle.\r");
+            // 
+            // buttonColor
+            // 
+            this.buttonColor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonColor.AutoSize = true;
+            this.buttonColor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonColor.Location = new System.Drawing.Point(674, 3);
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.Size = new System.Drawing.Size(107, 51);
+            this.buttonColor.TabIndex = 12;
+            this.buttonColor.Text = "Select";
+            this.toolTip.SetToolTip(this.buttonColor, "Select the line color.");
+            this.buttonColor.UseVisualStyleBackColor = true;
+            this.buttonColor.Click += new System.EventHandler(this.OnSelectColorClick);
             // 
             // tableLayoutSelectionLineWidth
             // 
             this.tableLayoutSelectionLineWidth.AutoSize = true;
             this.tableLayoutSelectionLineWidth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutSelectionLineWidth.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutSelectionLineWidth.ColumnCount = 3;
+            this.tableLayoutSelectionLineWidth.ColumnCount = 2;
             this.tableLayoutSelectionLineWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutSelectionLineWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutSelectionLineWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutSelectionLineWidth.Controls.Add(this.labelSelectionLineWidth, 0, 0);
             this.tableLayoutSelectionLineWidth.Controls.Add(this.textBoxSelectionLineWidth, 1, 0);
             this.tableLayoutSelectionLineWidth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutSelectionLineWidth.Location = new System.Drawing.Point(13, 62);
+            this.tableLayoutSelectionLineWidth.Location = new System.Drawing.Point(13, 66);
             this.tableLayoutSelectionLineWidth.Name = "tableLayoutSelectionLineWidth";
             this.tableLayoutSelectionLineWidth.RowCount = 3;
             this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -549,7 +564,7 @@
             this.flowLayoutPanelButtons.Controls.Add(this.buttonPreferences);
             this.flowLayoutPanelButtons.Controls.Add(this.buttonCancel);
             this.flowLayoutPanelButtons.Controls.Add(this.buttonOkButton);
-            this.flowLayoutPanelButtons.Location = new System.Drawing.Point(74, 674);
+            this.flowLayoutPanelButtons.Location = new System.Drawing.Point(74, 678);
             this.flowLayoutPanelButtons.Margin = new System.Windows.Forms.Padding(3, 26, 3, 26);
             this.flowLayoutPanelButtons.Name = "flowLayoutPanelButtons";
             this.flowLayoutPanelButtons.Size = new System.Drawing.Size(709, 57);
@@ -756,5 +771,6 @@
         private Label labelCustomZoom;
         private TextBox textBoxCustomZoom;
         private Button buttonOkButton;
+        private Button buttonColor;
     }
 }

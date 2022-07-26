@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Configuration;
 using System.Drawing.Printing;
 
 namespace Image_View {
@@ -156,6 +157,24 @@ namespace Image_View {
             Options options = getOptionsFromSavedSettings();
             setControlsFromOptions(options);
         }
+
+        private void OnSelectColorClick(object sender, EventArgs e) {
+            Color color;
+            try {
+                string hexColor = textBoxSelectionLineColor.Text;
+                color = System.Drawing.ColorTranslator.FromHtml(hexColor);
+            } catch (Exception) {
+                color = Color.Tomato;
+            }
+            ColorDialog dlg = new ColorDialog();
+            dlg.Color = color;
+            if (dlg.ShowDialog() == DialogResult.OK) {
+                color = dlg.Color;
+                textBoxSelectionLineColor.Text =
+                    ColorTranslator.ToHtml(Color.FromArgb(color.ToArgb()));
+            }
+        }
+
 
         /// <summary>
         /// Gets the original (default) Settings value for the given property name.

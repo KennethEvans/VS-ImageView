@@ -1,12 +1,10 @@
-﻿#define USE_STARTUP_FILE
+﻿//#define USE_STARTUP_FILE
 //#define DEBUG_AVAILABLE_FORMATS
 
 using KEUtils.About;
 using KEUtils.InputDialog;
 using KEUtils.ScrolledHTML;
 using KEUtils.Utils;
-using System.ComponentModel;
-using System.Configuration;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;

@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>Image View.ico</ApplicationIcon>
-    <Version>3.0.0</Version>
+    <Version>3.1.0</Version>
     <Company>kenevans.net</Company>
     <Copyright>Copyright © Kenneth Evans 2020</Copyright>
     <Authors>Kenneth Evans</Authors>
@@ -53,6 +53,10 @@
     <EmbeddedResource Include="icons\portrait-icon.png" />
     <EmbeddedResource Include="icons\refresh-icon.png" />
     <EmbeddedResource Include="icons\zoom-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1774.30" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,6 +4,7 @@
 using KEUtils.About;
 using KEUtils.InputDialog;
 using KEUtils.ScrolledHTML;
+using KEUtils.ScrolledHTML2;
 using KEUtils.Utils;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
@@ -14,7 +15,7 @@ using System.Reflection;
 namespace Image_View {
     public partial class MainForm : Form {
         public static readonly String NL = Environment.NewLine;
-        public static readonly long DEFAULT_JPEG_QUALITY = DEFAULT_JPEG_QUALITY;
+        public static readonly long DEFAULT_JPEG_QUALITY = 95;
         public static readonly float MOUSE_WHEEL_ZOOM_FACTOR = 0.001F;
         public static readonly float KEY_ZOOM_FACTOR = 1.1F;
         public static readonly float ZOOM_MIN = 0.1F;
@@ -28,7 +29,7 @@ namespace Image_View {
         public static readonly int EXPAND_RIGHT = 128;
         public enum ClipboardDataTypes { NULL, BITMAP, URL, CLIPBOARD };
 
-        private static ScrolledHTMLDialog? overviewDlg;
+        private static ScrolledHTMLDialog2? overviewDlg;
 
         public Image? Image { get; set; }
         public Image? ImageOrig { get; set; }
@@ -924,7 +925,7 @@ namespace Image_View {
             // Create, show, or set visible the overview dialog as appropriate
             if (overviewDlg == null) {
                 MainForm app = (MainForm)FindForm().FindForm();
-                overviewDlg = new ScrolledHTMLDialog(
+                overviewDlg = new ScrolledHTMLDialog2(
                     Utils.getDpiAdjustedSize(app, new Size(800, 600)),
                     "Overview", @"Help\Overview.html");
                 overviewDlg.Show();

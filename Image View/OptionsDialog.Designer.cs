@@ -23,712 +23,704 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            this.tableLayoutPanelTop = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxPrinting = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelPrinting = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxMargins = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelMargins = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelMarginsLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.labelLeft = new System.Windows.Forms.Label();
-            this.textBoxLeft = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelMarginsRight = new System.Windows.Forms.TableLayoutPanel();
-            this.labelRight = new System.Windows.Forms.Label();
-            this.textBoxRight = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelMarginsTop = new System.Windows.Forms.TableLayoutPanel();
-            this.labelTop = new System.Windows.Forms.Label();
-            this.textBoxTop = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelMarginsBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.labelBottom = new System.Windows.Forms.Label();
-            this.textBoxBottom = new System.Windows.Forms.TextBox();
-            this.checkBoxLandscape = new System.Windows.Forms.CheckBox();
-            this.groupBoxInterface = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanelInterface = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelCustomZoom = new System.Windows.Forms.TableLayoutPanel();
-            this.labelCustomZoom = new System.Windows.Forms.Label();
-            this.textBoxCustomZoom = new System.Windows.Forms.TextBox();
-            this.tableLayoutSelectionColor = new System.Windows.Forms.TableLayoutPanel();
-            this.selectionColor = new System.Windows.Forms.Label();
-            this.textBoxSelectionLineColor = new System.Windows.Forms.TextBox();
-            this.buttonColor = new System.Windows.Forms.Button();
-            this.tableLayoutSelectionLineWidth = new System.Windows.Forms.TableLayoutPanel();
-            this.labelSelectionLineWidth = new System.Windows.Forms.Label();
-            this.textBoxSelectionLineWidth = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanelButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonUseDefaults = new System.Windows.Forms.Button();
-            this.buttonUseSaved = new System.Windows.Forms.Button();
-            this.buttonPreferences = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonOkButton = new System.Windows.Forms.Button();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelTop.SuspendLayout();
-            this.groupBoxPrinting.SuspendLayout();
-            this.tableLayoutPanelPrinting.SuspendLayout();
-            this.groupBoxMargins.SuspendLayout();
-            this.tableLayoutPanelMargins.SuspendLayout();
-            this.tableLayoutPanelMarginsLeft.SuspendLayout();
-            this.tableLayoutPanelMarginsRight.SuspendLayout();
-            this.tableLayoutPanelMarginsTop.SuspendLayout();
-            this.tableLayoutPanelMarginsBottom.SuspendLayout();
-            this.groupBoxInterface.SuspendLayout();
-            this.tableLayoutPanelInterface.SuspendLayout();
-            this.tableLayoutPanelCustomZoom.SuspendLayout();
-            this.tableLayoutSelectionColor.SuspendLayout();
-            this.tableLayoutSelectionLineWidth.SuspendLayout();
-            this.flowLayoutPanelButtons.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            tableLayoutPanelTop = new TableLayoutPanel();
+            groupBoxPrinting = new GroupBox();
+            tableLayoutPanelPrinting = new TableLayoutPanel();
+            groupBoxMargins = new GroupBox();
+            tableLayoutPanelMargins = new TableLayoutPanel();
+            tableLayoutPanelMarginsLeft = new TableLayoutPanel();
+            labelLeft = new Label();
+            textBoxLeft = new TextBox();
+            tableLayoutPanelMarginsRight = new TableLayoutPanel();
+            labelRight = new Label();
+            textBoxRight = new TextBox();
+            tableLayoutPanelMarginsTop = new TableLayoutPanel();
+            labelTop = new Label();
+            textBoxTop = new TextBox();
+            tableLayoutPanelMarginsBottom = new TableLayoutPanel();
+            labelBottom = new Label();
+            textBoxBottom = new TextBox();
+            checkBoxLandscape = new CheckBox();
+            groupBoxInterface = new GroupBox();
+            tableLayoutPanelInterface = new TableLayoutPanel();
+            tableLayoutPanelCustomZoom = new TableLayoutPanel();
+            labelCustomZoom = new Label();
+            textBoxCustomZoom = new TextBox();
+            tableLayoutSelectionColor = new TableLayoutPanel();
+            selectionColor = new Label();
+            textBoxSelectionLineColor = new TextBox();
+            buttonColor = new Button();
+            tableLayoutSelectionLineWidth = new TableLayoutPanel();
+            labelSelectionLineWidth = new Label();
+            textBoxSelectionLineWidth = new TextBox();
+            flowLayoutPanelButtons = new FlowLayoutPanel();
+            buttonUseDefaults = new Button();
+            buttonUseSaved = new Button();
+            buttonPreferences = new Button();
+            buttonCancel = new Button();
+            buttonOkButton = new Button();
+            toolTip = new ToolTip(components);
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tableLayoutPanelTop.SuspendLayout();
+            groupBoxPrinting.SuspendLayout();
+            tableLayoutPanelPrinting.SuspendLayout();
+            groupBoxMargins.SuspendLayout();
+            tableLayoutPanelMargins.SuspendLayout();
+            tableLayoutPanelMarginsLeft.SuspendLayout();
+            tableLayoutPanelMarginsRight.SuspendLayout();
+            tableLayoutPanelMarginsTop.SuspendLayout();
+            tableLayoutPanelMarginsBottom.SuspendLayout();
+            groupBoxInterface.SuspendLayout();
+            tableLayoutPanelInterface.SuspendLayout();
+            tableLayoutPanelCustomZoom.SuspendLayout();
+            tableLayoutSelectionColor.SuspendLayout();
+            tableLayoutSelectionLineWidth.SuspendLayout();
+            flowLayoutPanelButtons.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // tableLayoutPanelTop
             // 
-            this.tableLayoutPanelTop.AutoSize = true;
-            this.tableLayoutPanelTop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelTop.ColumnCount = 1;
-            this.tableLayoutPanelTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelTop.Controls.Add(this.groupBoxPrinting, 0, 0);
-            this.tableLayoutPanelTop.Controls.Add(this.groupBoxInterface, 0, 1);
-            this.tableLayoutPanelTop.Controls.Add(this.flowLayoutPanelButtons, 0, 5);
-            this.tableLayoutPanelTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelTop.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanelTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanelTop.Name = "tableLayoutPanelTop";
-            this.tableLayoutPanelTop.RowCount = 7;
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanelTop.Size = new System.Drawing.Size(858, 762);
-            this.tableLayoutPanelTop.TabIndex = 0;
+            tableLayoutPanelTop.AutoSize = true;
+            tableLayoutPanelTop.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelTop.ColumnCount = 1;
+            tableLayoutPanelTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelTop.Controls.Add(groupBoxPrinting, 0, 0);
+            tableLayoutPanelTop.Controls.Add(groupBoxInterface, 0, 1);
+            tableLayoutPanelTop.Controls.Add(flowLayoutPanelButtons, 0, 5);
+            tableLayoutPanelTop.Dock = DockStyle.Fill;
+            tableLayoutPanelTop.Location = new Point(0, 0);
+            tableLayoutPanelTop.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanelTop.Name = "tableLayoutPanelTop";
+            tableLayoutPanelTop.RowCount = 7;
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelTop.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanelTop.Size = new Size(858, 762);
+            tableLayoutPanelTop.TabIndex = 0;
             // 
             // groupBoxPrinting
             // 
-            this.groupBoxPrinting.AutoSize = true;
-            this.groupBoxPrinting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxPrinting.Controls.Add(this.tableLayoutPanelPrinting);
-            this.groupBoxPrinting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxPrinting.Location = new System.Drawing.Point(3, 4);
-            this.groupBoxPrinting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxPrinting.Name = "groupBoxPrinting";
-            this.groupBoxPrinting.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxPrinting.Size = new System.Drawing.Size(852, 363);
-            this.groupBoxPrinting.TabIndex = 0;
-            this.groupBoxPrinting.TabStop = false;
-            this.groupBoxPrinting.Text = "Printing";
+            groupBoxPrinting.AutoSize = true;
+            groupBoxPrinting.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxPrinting.Controls.Add(tableLayoutPanelPrinting);
+            groupBoxPrinting.Dock = DockStyle.Fill;
+            groupBoxPrinting.Location = new Point(3, 4);
+            groupBoxPrinting.Margin = new Padding(3, 4, 3, 4);
+            groupBoxPrinting.Name = "groupBoxPrinting";
+            groupBoxPrinting.Padding = new Padding(21, 26, 21, 26);
+            groupBoxPrinting.Size = new Size(852, 363);
+            groupBoxPrinting.TabIndex = 0;
+            groupBoxPrinting.TabStop = false;
+            groupBoxPrinting.Text = "Printing";
             // 
             // tableLayoutPanelPrinting
             // 
-            this.tableLayoutPanelPrinting.AutoSize = true;
-            this.tableLayoutPanelPrinting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelPrinting.ColumnCount = 1;
-            this.tableLayoutPanelPrinting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelPrinting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelPrinting.Controls.Add(this.groupBoxMargins, 0, 0);
-            this.tableLayoutPanelPrinting.Controls.Add(this.checkBoxLandscape, 0, 1);
-            this.tableLayoutPanelPrinting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelPrinting.Location = new System.Drawing.Point(21, 66);
-            this.tableLayoutPanelPrinting.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanelPrinting.Name = "tableLayoutPanelPrinting";
-            this.tableLayoutPanelPrinting.RowCount = 3;
-            this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelPrinting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanelPrinting.Size = new System.Drawing.Size(810, 271);
-            this.tableLayoutPanelPrinting.TabIndex = 0;
+            tableLayoutPanelPrinting.AutoSize = true;
+            tableLayoutPanelPrinting.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelPrinting.ColumnCount = 1;
+            tableLayoutPanelPrinting.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelPrinting.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelPrinting.Controls.Add(groupBoxMargins, 0, 0);
+            tableLayoutPanelPrinting.Controls.Add(checkBoxLandscape, 0, 1);
+            tableLayoutPanelPrinting.Dock = DockStyle.Fill;
+            tableLayoutPanelPrinting.Location = new Point(21, 66);
+            tableLayoutPanelPrinting.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanelPrinting.Name = "tableLayoutPanelPrinting";
+            tableLayoutPanelPrinting.RowCount = 3;
+            tableLayoutPanelPrinting.RowStyles.Add(new RowStyle());
+            tableLayoutPanelPrinting.RowStyles.Add(new RowStyle());
+            tableLayoutPanelPrinting.RowStyles.Add(new RowStyle());
+            tableLayoutPanelPrinting.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanelPrinting.Size = new Size(810, 271);
+            tableLayoutPanelPrinting.TabIndex = 0;
             // 
             // groupBoxMargins
             // 
-            this.groupBoxMargins.AutoSize = true;
-            this.groupBoxMargins.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxMargins.Controls.Add(this.tableLayoutPanelMargins);
-            this.groupBoxMargins.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxMargins.Location = new System.Drawing.Point(3, 4);
-            this.groupBoxMargins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxMargins.Name = "groupBoxMargins";
-            this.groupBoxMargins.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxMargins.Size = new System.Drawing.Size(804, 210);
-            this.groupBoxMargins.TabIndex = 0;
-            this.groupBoxMargins.TabStop = false;
-            this.groupBoxMargins.Text = "Margins";
+            groupBoxMargins.AutoSize = true;
+            groupBoxMargins.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxMargins.Controls.Add(tableLayoutPanelMargins);
+            groupBoxMargins.Dock = DockStyle.Fill;
+            groupBoxMargins.Location = new Point(3, 4);
+            groupBoxMargins.Margin = new Padding(3, 4, 3, 4);
+            groupBoxMargins.Name = "groupBoxMargins";
+            groupBoxMargins.Padding = new Padding(21, 26, 21, 26);
+            groupBoxMargins.Size = new Size(804, 210);
+            groupBoxMargins.TabIndex = 0;
+            groupBoxMargins.TabStop = false;
+            groupBoxMargins.Text = "Margins";
             // 
             // tableLayoutPanelMargins
             // 
-            this.tableLayoutPanelMargins.AutoSize = true;
-            this.tableLayoutPanelMargins.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMargins.ColumnCount = 2;
-            this.tableLayoutPanelMargins.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelMargins.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelMargins.Controls.Add(this.tableLayoutPanelMarginsLeft, 0, 0);
-            this.tableLayoutPanelMargins.Controls.Add(this.tableLayoutPanelMarginsRight, 1, 0);
-            this.tableLayoutPanelMargins.Controls.Add(this.tableLayoutPanelMarginsTop, 0, 1);
-            this.tableLayoutPanelMargins.Controls.Add(this.tableLayoutPanelMarginsBottom, 1, 1);
-            this.tableLayoutPanelMargins.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMargins.Location = new System.Drawing.Point(21, 66);
-            this.tableLayoutPanelMargins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanelMargins.Name = "tableLayoutPanelMargins";
-            this.tableLayoutPanelMargins.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.tableLayoutPanelMargins.RowCount = 2;
-            this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanelMargins.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelMargins.Size = new System.Drawing.Size(762, 118);
-            this.tableLayoutPanelMargins.TabIndex = 0;
+            tableLayoutPanelMargins.AutoSize = true;
+            tableLayoutPanelMargins.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMargins.ColumnCount = 2;
+            tableLayoutPanelMargins.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelMargins.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelMargins.Controls.Add(tableLayoutPanelMarginsLeft, 0, 0);
+            tableLayoutPanelMargins.Controls.Add(tableLayoutPanelMarginsRight, 1, 0);
+            tableLayoutPanelMargins.Controls.Add(tableLayoutPanelMarginsTop, 0, 1);
+            tableLayoutPanelMargins.Controls.Add(tableLayoutPanelMarginsBottom, 1, 1);
+            tableLayoutPanelMargins.Dock = DockStyle.Fill;
+            tableLayoutPanelMargins.Location = new Point(21, 66);
+            tableLayoutPanelMargins.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanelMargins.Name = "tableLayoutPanelMargins";
+            tableLayoutPanelMargins.Padding = new Padding(10, 0, 10, 0);
+            tableLayoutPanelMargins.RowCount = 2;
+            tableLayoutPanelMargins.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMargins.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMargins.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMargins.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanelMargins.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelMargins.Size = new Size(762, 118);
+            tableLayoutPanelMargins.TabIndex = 0;
             // 
             // tableLayoutPanelMarginsLeft
             // 
-            this.tableLayoutPanelMarginsLeft.AutoSize = true;
-            this.tableLayoutPanelMarginsLeft.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMarginsLeft.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanelMarginsLeft.ColumnCount = 2;
-            this.tableLayoutPanelMarginsLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMarginsLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsLeft.Controls.Add(this.labelLeft, 0, 0);
-            this.tableLayoutPanelMarginsLeft.Controls.Add(this.textBoxLeft, 1, 0);
-            this.tableLayoutPanelMarginsLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMarginsLeft.Location = new System.Drawing.Point(13, 3);
-            this.tableLayoutPanelMarginsLeft.Name = "tableLayoutPanelMarginsLeft";
-            this.tableLayoutPanelMarginsLeft.RowCount = 1;
-            this.tableLayoutPanelMarginsLeft.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsLeft.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsLeft.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsLeft.Size = new System.Drawing.Size(365, 53);
-            this.tableLayoutPanelMarginsLeft.TabIndex = 0;
+            tableLayoutPanelMarginsLeft.AutoSize = true;
+            tableLayoutPanelMarginsLeft.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMarginsLeft.BackColor = SystemColors.Control;
+            tableLayoutPanelMarginsLeft.ColumnCount = 2;
+            tableLayoutPanelMarginsLeft.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsLeft.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelMarginsLeft.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsLeft.Controls.Add(labelLeft, 0, 0);
+            tableLayoutPanelMarginsLeft.Controls.Add(textBoxLeft, 1, 0);
+            tableLayoutPanelMarginsLeft.Dock = DockStyle.Fill;
+            tableLayoutPanelMarginsLeft.Location = new Point(13, 3);
+            tableLayoutPanelMarginsLeft.Name = "tableLayoutPanelMarginsLeft";
+            tableLayoutPanelMarginsLeft.RowCount = 1;
+            tableLayoutPanelMarginsLeft.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsLeft.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsLeft.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsLeft.Size = new Size(365, 53);
+            tableLayoutPanelMarginsLeft.TabIndex = 0;
             // 
             // labelLeft
             // 
-            this.labelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelLeft.AutoSize = true;
-            this.labelLeft.BackColor = System.Drawing.SystemColors.Control;
-            this.labelLeft.Location = new System.Drawing.Point(3, 0);
-            this.labelLeft.Name = "labelLeft";
-            this.labelLeft.Size = new System.Drawing.Size(67, 53);
-            this.labelLeft.TabIndex = 0;
-            this.labelLeft.Text = "Left";
-            this.labelLeft.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelLeft, "The left margin (floating point).");
+            labelLeft.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelLeft.AutoSize = true;
+            labelLeft.BackColor = SystemColors.Control;
+            labelLeft.Location = new Point(3, 0);
+            labelLeft.Name = "labelLeft";
+            labelLeft.Size = new Size(67, 53);
+            labelLeft.TabIndex = 0;
+            labelLeft.Text = "Left";
+            labelLeft.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(labelLeft, "The left margin (floating point).");
             // 
             // textBoxLeft
             // 
-            this.textBoxLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxLeft.Location = new System.Drawing.Point(76, 3);
-            this.textBoxLeft.Name = "textBoxLeft";
-            this.textBoxLeft.Size = new System.Drawing.Size(286, 47);
-            this.textBoxLeft.TabIndex = 6;
-            this.toolTip.SetToolTip(this.textBoxLeft, "The left margin (floating point).");
+            textBoxLeft.Dock = DockStyle.Fill;
+            textBoxLeft.Location = new Point(76, 3);
+            textBoxLeft.Name = "textBoxLeft";
+            textBoxLeft.Size = new Size(286, 47);
+            textBoxLeft.TabIndex = 6;
+            toolTip.SetToolTip(textBoxLeft, "The left margin (floating point).");
             // 
             // tableLayoutPanelMarginsRight
             // 
-            this.tableLayoutPanelMarginsRight.AutoSize = true;
-            this.tableLayoutPanelMarginsRight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMarginsRight.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanelMarginsRight.ColumnCount = 2;
-            this.tableLayoutPanelMarginsRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMarginsRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsRight.Controls.Add(this.labelRight, 0, 0);
-            this.tableLayoutPanelMarginsRight.Controls.Add(this.textBoxRight, 1, 0);
-            this.tableLayoutPanelMarginsRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMarginsRight.Location = new System.Drawing.Point(384, 3);
-            this.tableLayoutPanelMarginsRight.Name = "tableLayoutPanelMarginsRight";
-            this.tableLayoutPanelMarginsRight.RowCount = 3;
-            this.tableLayoutPanelMarginsRight.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsRight.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsRight.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsRight.Size = new System.Drawing.Size(365, 53);
-            this.tableLayoutPanelMarginsRight.TabIndex = 3;
+            tableLayoutPanelMarginsRight.AutoSize = true;
+            tableLayoutPanelMarginsRight.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMarginsRight.BackColor = SystemColors.Control;
+            tableLayoutPanelMarginsRight.ColumnCount = 2;
+            tableLayoutPanelMarginsRight.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsRight.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelMarginsRight.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsRight.Controls.Add(labelRight, 0, 0);
+            tableLayoutPanelMarginsRight.Controls.Add(textBoxRight, 1, 0);
+            tableLayoutPanelMarginsRight.Dock = DockStyle.Fill;
+            tableLayoutPanelMarginsRight.Location = new Point(384, 3);
+            tableLayoutPanelMarginsRight.Name = "tableLayoutPanelMarginsRight";
+            tableLayoutPanelMarginsRight.RowCount = 3;
+            tableLayoutPanelMarginsRight.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsRight.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsRight.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsRight.Size = new Size(365, 53);
+            tableLayoutPanelMarginsRight.TabIndex = 3;
             // 
             // labelRight
             // 
-            this.labelRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelRight.AutoSize = true;
-            this.labelRight.BackColor = System.Drawing.SystemColors.Control;
-            this.labelRight.Location = new System.Drawing.Point(3, 0);
-            this.labelRight.Name = "labelRight";
-            this.labelRight.Size = new System.Drawing.Size(88, 53);
-            this.labelRight.TabIndex = 0;
-            this.labelRight.Text = "Right";
-            this.labelRight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelRight, "The right margin (floating point).");
+            labelRight.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelRight.AutoSize = true;
+            labelRight.BackColor = SystemColors.Control;
+            labelRight.Location = new Point(3, 0);
+            labelRight.Name = "labelRight";
+            labelRight.Size = new Size(88, 53);
+            labelRight.TabIndex = 0;
+            labelRight.Text = "Right";
+            labelRight.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(labelRight, "The right margin (floating point).");
             // 
             // textBoxRight
             // 
-            this.textBoxRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxRight.Location = new System.Drawing.Point(97, 3);
-            this.textBoxRight.Name = "textBoxRight";
-            this.textBoxRight.Size = new System.Drawing.Size(265, 47);
-            this.textBoxRight.TabIndex = 8;
-            this.toolTip.SetToolTip(this.textBoxRight, "The right margin (floating point).");
+            textBoxRight.Dock = DockStyle.Fill;
+            textBoxRight.Location = new Point(97, 3);
+            textBoxRight.Name = "textBoxRight";
+            textBoxRight.Size = new Size(265, 47);
+            textBoxRight.TabIndex = 8;
+            toolTip.SetToolTip(textBoxRight, "The right margin (floating point).");
             // 
             // tableLayoutPanelMarginsTop
             // 
-            this.tableLayoutPanelMarginsTop.AutoSize = true;
-            this.tableLayoutPanelMarginsTop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMarginsTop.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanelMarginsTop.ColumnCount = 2;
-            this.tableLayoutPanelMarginsTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMarginsTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsTop.Controls.Add(this.labelTop, 0, 0);
-            this.tableLayoutPanelMarginsTop.Controls.Add(this.textBoxTop, 1, 0);
-            this.tableLayoutPanelMarginsTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMarginsTop.Location = new System.Drawing.Point(13, 62);
-            this.tableLayoutPanelMarginsTop.Name = "tableLayoutPanelMarginsTop";
-            this.tableLayoutPanelMarginsTop.RowCount = 3;
-            this.tableLayoutPanelMarginsTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsTop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsTop.Size = new System.Drawing.Size(365, 53);
-            this.tableLayoutPanelMarginsTop.TabIndex = 2;
+            tableLayoutPanelMarginsTop.AutoSize = true;
+            tableLayoutPanelMarginsTop.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMarginsTop.BackColor = SystemColors.Control;
+            tableLayoutPanelMarginsTop.ColumnCount = 2;
+            tableLayoutPanelMarginsTop.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelMarginsTop.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsTop.Controls.Add(labelTop, 0, 0);
+            tableLayoutPanelMarginsTop.Controls.Add(textBoxTop, 1, 0);
+            tableLayoutPanelMarginsTop.Dock = DockStyle.Fill;
+            tableLayoutPanelMarginsTop.Location = new Point(13, 62);
+            tableLayoutPanelMarginsTop.Name = "tableLayoutPanelMarginsTop";
+            tableLayoutPanelMarginsTop.RowCount = 3;
+            tableLayoutPanelMarginsTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsTop.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsTop.Size = new Size(365, 53);
+            tableLayoutPanelMarginsTop.TabIndex = 2;
             // 
             // labelTop
             // 
-            this.labelTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelTop.AutoSize = true;
-            this.labelTop.BackColor = System.Drawing.SystemColors.Control;
-            this.labelTop.Location = new System.Drawing.Point(3, 0);
-            this.labelTop.Name = "labelTop";
-            this.labelTop.Size = new System.Drawing.Size(67, 53);
-            this.labelTop.TabIndex = 0;
-            this.labelTop.Text = "Top";
-            this.labelTop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelTop, "The top margin (floating point).");
+            labelTop.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelTop.AutoSize = true;
+            labelTop.BackColor = SystemColors.Control;
+            labelTop.Location = new Point(3, 0);
+            labelTop.Name = "labelTop";
+            labelTop.Size = new Size(67, 53);
+            labelTop.TabIndex = 0;
+            labelTop.Text = "Top";
+            labelTop.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(labelTop, "The top margin (floating point).");
             // 
             // textBoxTop
             // 
-            this.textBoxTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTop.Location = new System.Drawing.Point(76, 3);
-            this.textBoxTop.Name = "textBoxTop";
-            this.textBoxTop.Size = new System.Drawing.Size(286, 47);
-            this.textBoxTop.TabIndex = 7;
-            this.toolTip.SetToolTip(this.textBoxTop, "The left margin (floating point).");
+            textBoxTop.Dock = DockStyle.Fill;
+            textBoxTop.Location = new Point(76, 3);
+            textBoxTop.Name = "textBoxTop";
+            textBoxTop.Size = new Size(286, 47);
+            textBoxTop.TabIndex = 7;
+            toolTip.SetToolTip(textBoxTop, "The left margin (floating point).");
             // 
             // tableLayoutPanelMarginsBottom
             // 
-            this.tableLayoutPanelMarginsBottom.AutoSize = true;
-            this.tableLayoutPanelMarginsBottom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelMarginsBottom.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanelMarginsBottom.ColumnCount = 2;
-            this.tableLayoutPanelMarginsBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMarginsBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelMarginsBottom.Controls.Add(this.labelBottom, 0, 0);
-            this.tableLayoutPanelMarginsBottom.Controls.Add(this.textBoxBottom, 1, 0);
-            this.tableLayoutPanelMarginsBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelMarginsBottom.Location = new System.Drawing.Point(384, 62);
-            this.tableLayoutPanelMarginsBottom.Name = "tableLayoutPanelMarginsBottom";
-            this.tableLayoutPanelMarginsBottom.RowCount = 3;
-            this.tableLayoutPanelMarginsBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsBottom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelMarginsBottom.Size = new System.Drawing.Size(365, 53);
-            this.tableLayoutPanelMarginsBottom.TabIndex = 1;
+            tableLayoutPanelMarginsBottom.AutoSize = true;
+            tableLayoutPanelMarginsBottom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelMarginsBottom.BackColor = SystemColors.Control;
+            tableLayoutPanelMarginsBottom.ColumnCount = 2;
+            tableLayoutPanelMarginsBottom.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsBottom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelMarginsBottom.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelMarginsBottom.Controls.Add(labelBottom, 0, 0);
+            tableLayoutPanelMarginsBottom.Controls.Add(textBoxBottom, 1, 0);
+            tableLayoutPanelMarginsBottom.Dock = DockStyle.Fill;
+            tableLayoutPanelMarginsBottom.Location = new Point(384, 62);
+            tableLayoutPanelMarginsBottom.Name = "tableLayoutPanelMarginsBottom";
+            tableLayoutPanelMarginsBottom.RowCount = 3;
+            tableLayoutPanelMarginsBottom.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsBottom.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsBottom.RowStyles.Add(new RowStyle());
+            tableLayoutPanelMarginsBottom.Size = new Size(365, 53);
+            tableLayoutPanelMarginsBottom.TabIndex = 1;
             // 
             // labelBottom
             // 
-            this.labelBottom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelBottom.AutoSize = true;
-            this.labelBottom.BackColor = System.Drawing.SystemColors.Control;
-            this.labelBottom.Location = new System.Drawing.Point(3, 0);
-            this.labelBottom.Name = "labelBottom";
-            this.labelBottom.Size = new System.Drawing.Size(117, 53);
-            this.labelBottom.TabIndex = 0;
-            this.labelBottom.Text = "Bottom";
-            this.labelBottom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelBottom, "The bottom margin (floating point).");
+            labelBottom.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelBottom.AutoSize = true;
+            labelBottom.BackColor = SystemColors.Control;
+            labelBottom.Location = new Point(3, 0);
+            labelBottom.Name = "labelBottom";
+            labelBottom.Size = new Size(117, 53);
+            labelBottom.TabIndex = 0;
+            labelBottom.Text = "Bottom";
+            labelBottom.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(labelBottom, "The bottom margin (floating point).");
             // 
             // textBoxBottom
             // 
-            this.textBoxBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxBottom.Location = new System.Drawing.Point(126, 3);
-            this.textBoxBottom.Name = "textBoxBottom";
-            this.textBoxBottom.Size = new System.Drawing.Size(236, 47);
-            this.textBoxBottom.TabIndex = 9;
-            this.toolTip.SetToolTip(this.textBoxBottom, "The bottom margin (floating point).");
+            textBoxBottom.Dock = DockStyle.Fill;
+            textBoxBottom.Location = new Point(126, 3);
+            textBoxBottom.Name = "textBoxBottom";
+            textBoxBottom.Size = new Size(236, 47);
+            textBoxBottom.TabIndex = 9;
+            toolTip.SetToolTip(textBoxBottom, "The bottom margin (floating point).");
             // 
             // checkBoxLandscape
             // 
-            this.checkBoxLandscape.AutoSize = true;
-            this.checkBoxLandscape.Location = new System.Drawing.Point(3, 222);
-            this.checkBoxLandscape.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.checkBoxLandscape.Name = "checkBoxLandscape";
-            this.checkBoxLandscape.Size = new System.Drawing.Size(196, 45);
-            this.checkBoxLandscape.TabIndex = 10;
-            this.checkBoxLandscape.Text = "Landscape";
-            this.toolTip.SetToolTip(this.checkBoxLandscape, "Whether to use landscape or portrait.");
-            this.checkBoxLandscape.UseVisualStyleBackColor = true;
+            checkBoxLandscape.AutoSize = true;
+            checkBoxLandscape.Location = new Point(3, 222);
+            checkBoxLandscape.Margin = new Padding(3, 4, 3, 4);
+            checkBoxLandscape.Name = "checkBoxLandscape";
+            checkBoxLandscape.Size = new Size(196, 45);
+            checkBoxLandscape.TabIndex = 10;
+            checkBoxLandscape.Text = "Landscape";
+            toolTip.SetToolTip(checkBoxLandscape, "Whether to use landscape or portrait.");
+            checkBoxLandscape.UseVisualStyleBackColor = true;
             // 
             // groupBoxInterface
             // 
-            this.groupBoxInterface.AutoSize = true;
-            this.groupBoxInterface.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxInterface.Controls.Add(this.tableLayoutPanelInterface);
-            this.groupBoxInterface.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxInterface.Location = new System.Drawing.Point(3, 375);
-            this.groupBoxInterface.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxInterface.Name = "groupBoxInterface";
-            this.groupBoxInterface.Padding = new System.Windows.Forms.Padding(21, 26, 21, 26);
-            this.groupBoxInterface.Size = new System.Drawing.Size(852, 273);
-            this.groupBoxInterface.TabIndex = 0;
-            this.groupBoxInterface.TabStop = false;
-            this.groupBoxInterface.Text = "Interface";
+            groupBoxInterface.AutoSize = true;
+            groupBoxInterface.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBoxInterface.Controls.Add(tableLayoutPanelInterface);
+            groupBoxInterface.Dock = DockStyle.Fill;
+            groupBoxInterface.Location = new Point(3, 375);
+            groupBoxInterface.Margin = new Padding(3, 4, 3, 4);
+            groupBoxInterface.Name = "groupBoxInterface";
+            groupBoxInterface.Padding = new Padding(21, 26, 21, 26);
+            groupBoxInterface.Size = new Size(852, 273);
+            groupBoxInterface.TabIndex = 0;
+            groupBoxInterface.TabStop = false;
+            groupBoxInterface.Text = "Interface";
             // 
             // tableLayoutPanelInterface
             // 
-            this.tableLayoutPanelInterface.AutoSize = true;
-            this.tableLayoutPanelInterface.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelInterface.ColumnCount = 1;
-            this.tableLayoutPanelInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelInterface.Controls.Add(this.tableLayoutPanelCustomZoom, 0, 3);
-            this.tableLayoutPanelInterface.Controls.Add(this.tableLayoutSelectionColor, 0, 0);
-            this.tableLayoutPanelInterface.Controls.Add(this.tableLayoutSelectionLineWidth, 0, 1);
-            this.tableLayoutPanelInterface.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelInterface.Location = new System.Drawing.Point(21, 66);
-            this.tableLayoutPanelInterface.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanelInterface.Name = "tableLayoutPanelInterface";
-            this.tableLayoutPanelInterface.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.tableLayoutPanelInterface.RowCount = 3;
-            this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInterface.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelInterface.Size = new System.Drawing.Size(810, 181);
-            this.tableLayoutPanelInterface.TabIndex = 0;
+            tableLayoutPanelInterface.AutoSize = true;
+            tableLayoutPanelInterface.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelInterface.ColumnCount = 1;
+            tableLayoutPanelInterface.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelInterface.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanelInterface.Controls.Add(tableLayoutPanelCustomZoom, 0, 3);
+            tableLayoutPanelInterface.Controls.Add(tableLayoutSelectionColor, 0, 0);
+            tableLayoutPanelInterface.Controls.Add(tableLayoutSelectionLineWidth, 0, 1);
+            tableLayoutPanelInterface.Dock = DockStyle.Fill;
+            tableLayoutPanelInterface.Location = new Point(21, 66);
+            tableLayoutPanelInterface.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanelInterface.Name = "tableLayoutPanelInterface";
+            tableLayoutPanelInterface.Padding = new Padding(10, 0, 10, 0);
+            tableLayoutPanelInterface.RowCount = 3;
+            tableLayoutPanelInterface.RowStyles.Add(new RowStyle());
+            tableLayoutPanelInterface.RowStyles.Add(new RowStyle());
+            tableLayoutPanelInterface.RowStyles.Add(new RowStyle());
+            tableLayoutPanelInterface.RowStyles.Add(new RowStyle());
+            tableLayoutPanelInterface.Size = new Size(810, 181);
+            tableLayoutPanelInterface.TabIndex = 0;
             // 
             // tableLayoutPanelCustomZoom
             // 
-            this.tableLayoutPanelCustomZoom.AutoSize = true;
-            this.tableLayoutPanelCustomZoom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelCustomZoom.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanelCustomZoom.ColumnCount = 2;
-            this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCustomZoom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelCustomZoom.Controls.Add(this.labelCustomZoom, 0, 0);
-            this.tableLayoutPanelCustomZoom.Controls.Add(this.textBoxCustomZoom, 1, 0);
-            this.tableLayoutPanelCustomZoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelCustomZoom.Location = new System.Drawing.Point(13, 125);
-            this.tableLayoutPanelCustomZoom.Name = "tableLayoutPanelCustomZoom";
-            this.tableLayoutPanelCustomZoom.RowCount = 3;
-            this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomZoom.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCustomZoom.Size = new System.Drawing.Size(784, 53);
-            this.tableLayoutPanelCustomZoom.TabIndex = 2;
+            tableLayoutPanelCustomZoom.AutoSize = true;
+            tableLayoutPanelCustomZoom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanelCustomZoom.BackColor = SystemColors.Control;
+            tableLayoutPanelCustomZoom.ColumnCount = 2;
+            tableLayoutPanelCustomZoom.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanelCustomZoom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanelCustomZoom.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanelCustomZoom.Controls.Add(labelCustomZoom, 0, 0);
+            tableLayoutPanelCustomZoom.Controls.Add(textBoxCustomZoom, 1, 0);
+            tableLayoutPanelCustomZoom.Dock = DockStyle.Fill;
+            tableLayoutPanelCustomZoom.Location = new Point(13, 125);
+            tableLayoutPanelCustomZoom.Name = "tableLayoutPanelCustomZoom";
+            tableLayoutPanelCustomZoom.RowCount = 3;
+            tableLayoutPanelCustomZoom.RowStyles.Add(new RowStyle());
+            tableLayoutPanelCustomZoom.RowStyles.Add(new RowStyle());
+            tableLayoutPanelCustomZoom.RowStyles.Add(new RowStyle());
+            tableLayoutPanelCustomZoom.Size = new Size(784, 53);
+            tableLayoutPanelCustomZoom.TabIndex = 2;
             // 
             // labelCustomZoom
             // 
-            this.labelCustomZoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelCustomZoom.AutoSize = true;
-            this.labelCustomZoom.BackColor = System.Drawing.SystemColors.Control;
-            this.labelCustomZoom.Location = new System.Drawing.Point(3, 0);
-            this.labelCustomZoom.Name = "labelCustomZoom";
-            this.labelCustomZoom.Size = new System.Drawing.Size(208, 53);
-            this.labelCustomZoom.TabIndex = 0;
-            this.labelCustomZoom.Text = "Custom Zoom";
-            this.labelCustomZoom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelCustomZoom, "Magnification value for custom zoom in % (floating-point).");
+            labelCustomZoom.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelCustomZoom.AutoSize = true;
+            labelCustomZoom.BackColor = SystemColors.Control;
+            labelCustomZoom.Location = new Point(3, 0);
+            labelCustomZoom.Name = "labelCustomZoom";
+            labelCustomZoom.Size = new Size(208, 53);
+            labelCustomZoom.TabIndex = 0;
+            labelCustomZoom.Text = "Custom Zoom";
+            labelCustomZoom.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(labelCustomZoom, "Magnification value for custom zoom in % (floating-point).");
             // 
             // textBoxCustomZoom
             // 
-            this.textBoxCustomZoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCustomZoom.Location = new System.Drawing.Point(217, 3);
-            this.textBoxCustomZoom.Name = "textBoxCustomZoom";
-            this.textBoxCustomZoom.Size = new System.Drawing.Size(564, 47);
-            this.textBoxCustomZoom.TabIndex = 13;
-            this.toolTip.SetToolTip(this.textBoxCustomZoom, "Magnification value for custom zoom in % (floating-point).");
+            textBoxCustomZoom.Dock = DockStyle.Fill;
+            textBoxCustomZoom.Location = new Point(217, 3);
+            textBoxCustomZoom.Name = "textBoxCustomZoom";
+            textBoxCustomZoom.Size = new Size(564, 47);
+            textBoxCustomZoom.TabIndex = 13;
+            toolTip.SetToolTip(textBoxCustomZoom, "Magnification value for custom zoom in % (floating-point).");
             // 
             // tableLayoutSelectionColor
             // 
-            this.tableLayoutSelectionColor.AutoSize = true;
-            this.tableLayoutSelectionColor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutSelectionColor.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutSelectionColor.ColumnCount = 3;
-            this.tableLayoutSelectionColor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutSelectionColor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutSelectionColor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutSelectionColor.Controls.Add(this.selectionColor, 0, 0);
-            this.tableLayoutSelectionColor.Controls.Add(this.textBoxSelectionLineColor, 1, 0);
-            this.tableLayoutSelectionColor.Controls.Add(this.buttonColor, 2, 0);
-            this.tableLayoutSelectionColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutSelectionColor.Location = new System.Drawing.Point(13, 3);
-            this.tableLayoutSelectionColor.Name = "tableLayoutSelectionColor";
-            this.tableLayoutSelectionColor.RowCount = 3;
-            this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionColor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionColor.Size = new System.Drawing.Size(784, 57);
-            this.tableLayoutSelectionColor.TabIndex = 0;
+            tableLayoutSelectionColor.AutoSize = true;
+            tableLayoutSelectionColor.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutSelectionColor.BackColor = SystemColors.Control;
+            tableLayoutSelectionColor.ColumnCount = 3;
+            tableLayoutSelectionColor.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutSelectionColor.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutSelectionColor.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutSelectionColor.Controls.Add(selectionColor, 0, 0);
+            tableLayoutSelectionColor.Controls.Add(textBoxSelectionLineColor, 1, 0);
+            tableLayoutSelectionColor.Controls.Add(buttonColor, 2, 0);
+            tableLayoutSelectionColor.Dock = DockStyle.Fill;
+            tableLayoutSelectionColor.Location = new Point(13, 3);
+            tableLayoutSelectionColor.Name = "tableLayoutSelectionColor";
+            tableLayoutSelectionColor.RowCount = 3;
+            tableLayoutSelectionColor.RowStyles.Add(new RowStyle());
+            tableLayoutSelectionColor.RowStyles.Add(new RowStyle());
+            tableLayoutSelectionColor.RowStyles.Add(new RowStyle());
+            tableLayoutSelectionColor.Size = new Size(784, 57);
+            tableLayoutSelectionColor.TabIndex = 0;
             // 
             // selectionColor
             // 
-            this.selectionColor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.selectionColor.AutoSize = true;
-            this.selectionColor.BackColor = System.Drawing.SystemColors.Control;
-            this.selectionColor.Location = new System.Drawing.Point(3, 0);
-            this.selectionColor.Name = "selectionColor";
-            this.selectionColor.Size = new System.Drawing.Size(357, 57);
-            this.selectionColor.TabIndex = 0;
-            this.selectionColor.Text = "Selection Rectangle Color";
-            this.selectionColor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.selectionColor, "The color of the selection rectangle.");
+            selectionColor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            selectionColor.AutoSize = true;
+            selectionColor.BackColor = SystemColors.Control;
+            selectionColor.Location = new Point(3, 0);
+            selectionColor.Name = "selectionColor";
+            selectionColor.Size = new Size(357, 57);
+            selectionColor.TabIndex = 0;
+            selectionColor.Text = "Selection Rectangle Color";
+            selectionColor.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(selectionColor, "The color of the selection rectangle.");
             // 
             // textBoxSelectionLineColor
             // 
-            this.textBoxSelectionLineColor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSelectionLineColor.Location = new System.Drawing.Point(366, 3);
-            this.textBoxSelectionLineColor.Name = "textBoxSelectionLineColor";
-            this.textBoxSelectionLineColor.Size = new System.Drawing.Size(302, 47);
-            this.textBoxSelectionLineColor.TabIndex = 11;
-            this.toolTip.SetToolTip(this.textBoxSelectionLineColor, "The color of the selection rectangle.\r");
+            textBoxSelectionLineColor.Dock = DockStyle.Fill;
+            textBoxSelectionLineColor.Location = new Point(366, 3);
+            textBoxSelectionLineColor.Name = "textBoxSelectionLineColor";
+            textBoxSelectionLineColor.Size = new Size(302, 47);
+            textBoxSelectionLineColor.TabIndex = 11;
+            toolTip.SetToolTip(textBoxSelectionLineColor, "The color of the selection rectangle.\r");
             // 
             // buttonColor
             // 
-            this.buttonColor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonColor.AutoSize = true;
-            this.buttonColor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonColor.Location = new System.Drawing.Point(674, 3);
-            this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(107, 51);
-            this.buttonColor.TabIndex = 12;
-            this.buttonColor.Text = "Select";
-            this.toolTip.SetToolTip(this.buttonColor, "Select the line color.");
-            this.buttonColor.UseVisualStyleBackColor = true;
-            this.buttonColor.Click += new System.EventHandler(this.OnSelectColorClick);
+            buttonColor.Anchor = AnchorStyles.None;
+            buttonColor.AutoSize = true;
+            buttonColor.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonColor.Location = new Point(674, 3);
+            buttonColor.Name = "buttonColor";
+            buttonColor.Size = new Size(107, 51);
+            buttonColor.TabIndex = 12;
+            buttonColor.Text = "Select";
+            toolTip.SetToolTip(buttonColor, "Select the line color.");
+            buttonColor.UseVisualStyleBackColor = true;
+            buttonColor.Click += OnSelectColorClick;
             // 
             // tableLayoutSelectionLineWidth
             // 
-            this.tableLayoutSelectionLineWidth.AutoSize = true;
-            this.tableLayoutSelectionLineWidth.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutSelectionLineWidth.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutSelectionLineWidth.ColumnCount = 2;
-            this.tableLayoutSelectionLineWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutSelectionLineWidth.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutSelectionLineWidth.Controls.Add(this.labelSelectionLineWidth, 0, 0);
-            this.tableLayoutSelectionLineWidth.Controls.Add(this.textBoxSelectionLineWidth, 1, 0);
-            this.tableLayoutSelectionLineWidth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutSelectionLineWidth.Location = new System.Drawing.Point(13, 66);
-            this.tableLayoutSelectionLineWidth.Name = "tableLayoutSelectionLineWidth";
-            this.tableLayoutSelectionLineWidth.RowCount = 3;
-            this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionLineWidth.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutSelectionLineWidth.Size = new System.Drawing.Size(784, 53);
-            this.tableLayoutSelectionLineWidth.TabIndex = 1;
+            tableLayoutSelectionLineWidth.AutoSize = true;
+            tableLayoutSelectionLineWidth.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutSelectionLineWidth.BackColor = SystemColors.Control;
+            tableLayoutSelectionLineWidth.ColumnCount = 2;
+            tableLayoutSelectionLineWidth.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutSelectionLineWidth.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutSelectionLineWidth.Controls.Add(labelSelectionLineWidth, 0, 0);
+            tableLayoutSelectionLineWidth.Controls.Add(textBoxSelectionLineWidth, 1, 0);
+            tableLayoutSelectionLineWidth.Dock = DockStyle.Fill;
+            tableLayoutSelectionLineWidth.Location = new Point(13, 66);
+            tableLayoutSelectionLineWidth.Name = "tableLayoutSelectionLineWidth";
+            tableLayoutSelectionLineWidth.RowCount = 3;
+            tableLayoutSelectionLineWidth.RowStyles.Add(new RowStyle());
+            tableLayoutSelectionLineWidth.RowStyles.Add(new RowStyle());
+            tableLayoutSelectionLineWidth.RowStyles.Add(new RowStyle());
+            tableLayoutSelectionLineWidth.Size = new Size(784, 53);
+            tableLayoutSelectionLineWidth.TabIndex = 1;
             // 
             // labelSelectionLineWidth
             // 
-            this.labelSelectionLineWidth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelSelectionLineWidth.AutoSize = true;
-            this.labelSelectionLineWidth.BackColor = System.Drawing.SystemColors.Control;
-            this.labelSelectionLineWidth.Location = new System.Drawing.Point(3, 0);
-            this.labelSelectionLineWidth.Name = "labelSelectionLineWidth";
-            this.labelSelectionLineWidth.Size = new System.Drawing.Size(289, 53);
-            this.labelSelectionLineWidth.TabIndex = 0;
-            this.labelSelectionLineWidth.Text = "Selection Line Width";
-            this.labelSelectionLineWidth.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelSelectionLineWidth, "The width of the selection rectangle line.");
+            labelSelectionLineWidth.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelSelectionLineWidth.AutoSize = true;
+            labelSelectionLineWidth.BackColor = SystemColors.Control;
+            labelSelectionLineWidth.Location = new Point(3, 0);
+            labelSelectionLineWidth.Name = "labelSelectionLineWidth";
+            labelSelectionLineWidth.Size = new Size(289, 53);
+            labelSelectionLineWidth.TabIndex = 0;
+            labelSelectionLineWidth.Text = "Selection Line Width";
+            labelSelectionLineWidth.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip.SetToolTip(labelSelectionLineWidth, "The width of the selection rectangle line.");
             // 
             // textBoxSelectionLineWidth
             // 
-            this.textBoxSelectionLineWidth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSelectionLineWidth.Location = new System.Drawing.Point(298, 3);
-            this.textBoxSelectionLineWidth.Name = "textBoxSelectionLineWidth";
-            this.textBoxSelectionLineWidth.Size = new System.Drawing.Size(483, 47);
-            this.textBoxSelectionLineWidth.TabIndex = 12;
-            this.toolTip.SetToolTip(this.textBoxSelectionLineWidth, "The width of the selection rectangle line.");
+            textBoxSelectionLineWidth.Dock = DockStyle.Fill;
+            textBoxSelectionLineWidth.Location = new Point(298, 3);
+            textBoxSelectionLineWidth.Name = "textBoxSelectionLineWidth";
+            textBoxSelectionLineWidth.Size = new Size(483, 47);
+            textBoxSelectionLineWidth.TabIndex = 12;
+            toolTip.SetToolTip(textBoxSelectionLineWidth, "The width of the selection rectangle line.");
             // 
             // flowLayoutPanelButtons
             // 
-            this.flowLayoutPanelButtons.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.flowLayoutPanelButtons.AutoSize = true;
-            this.flowLayoutPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanelButtons.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanelButtons.Controls.Add(this.buttonUseDefaults);
-            this.flowLayoutPanelButtons.Controls.Add(this.buttonUseSaved);
-            this.flowLayoutPanelButtons.Controls.Add(this.buttonPreferences);
-            this.flowLayoutPanelButtons.Controls.Add(this.buttonCancel);
-            this.flowLayoutPanelButtons.Controls.Add(this.buttonOkButton);
-            this.flowLayoutPanelButtons.Location = new System.Drawing.Point(74, 678);
-            this.flowLayoutPanelButtons.Margin = new System.Windows.Forms.Padding(3, 26, 3, 26);
-            this.flowLayoutPanelButtons.Name = "flowLayoutPanelButtons";
-            this.flowLayoutPanelButtons.Size = new System.Drawing.Size(709, 57);
-            this.flowLayoutPanelButtons.TabIndex = 0;
-            this.flowLayoutPanelButtons.WrapContents = false;
+            flowLayoutPanelButtons.Anchor = AnchorStyles.Bottom;
+            flowLayoutPanelButtons.AutoSize = true;
+            flowLayoutPanelButtons.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanelButtons.BackColor = SystemColors.Control;
+            flowLayoutPanelButtons.Controls.Add(buttonUseDefaults);
+            flowLayoutPanelButtons.Controls.Add(buttonUseSaved);
+            flowLayoutPanelButtons.Controls.Add(buttonPreferences);
+            flowLayoutPanelButtons.Controls.Add(buttonCancel);
+            flowLayoutPanelButtons.Controls.Add(buttonOkButton);
+            flowLayoutPanelButtons.Location = new Point(74, 678);
+            flowLayoutPanelButtons.Margin = new Padding(3, 26, 3, 26);
+            flowLayoutPanelButtons.Name = "flowLayoutPanelButtons";
+            flowLayoutPanelButtons.Size = new Size(709, 57);
+            flowLayoutPanelButtons.TabIndex = 0;
+            flowLayoutPanelButtons.WrapContents = false;
             // 
             // buttonUseDefaults
             // 
-            this.buttonUseDefaults.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonUseDefaults.AutoSize = true;
-            this.buttonUseDefaults.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonUseDefaults.Location = new System.Drawing.Point(3, 3);
-            this.buttonUseDefaults.Name = "buttonUseDefaults";
-            this.buttonUseDefaults.Size = new System.Drawing.Size(194, 51);
-            this.buttonUseDefaults.TabIndex = 3;
-            this.buttonUseDefaults.Text = "Use Defaults";
-            this.toolTip.SetToolTip(this.buttonUseDefaults, "Load the default settings.");
-            this.buttonUseDefaults.UseVisualStyleBackColor = true;
-            this.buttonUseDefaults.Click += new System.EventHandler(this.OnUseDefaultsClick);
+            buttonUseDefaults.Anchor = AnchorStyles.None;
+            buttonUseDefaults.AutoSize = true;
+            buttonUseDefaults.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonUseDefaults.Location = new Point(3, 3);
+            buttonUseDefaults.Name = "buttonUseDefaults";
+            buttonUseDefaults.Size = new Size(194, 51);
+            buttonUseDefaults.TabIndex = 3;
+            buttonUseDefaults.Text = "Use Defaults";
+            toolTip.SetToolTip(buttonUseDefaults, "Load the default settings.");
+            buttonUseDefaults.UseVisualStyleBackColor = true;
+            buttonUseDefaults.Click += OnUseDefaultsClick;
             // 
             // buttonUseSaved
             // 
-            this.buttonUseSaved.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonUseSaved.AutoSize = true;
-            this.buttonUseSaved.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonUseSaved.Location = new System.Drawing.Point(203, 3);
-            this.buttonUseSaved.Name = "buttonUseSaved";
-            this.buttonUseSaved.Size = new System.Drawing.Size(165, 51);
-            this.buttonUseSaved.TabIndex = 4;
-            this.buttonUseSaved.Text = "Use Saved";
-            this.toolTip.SetToolTip(this.buttonUseSaved, "Load the last saved settings.");
-            this.buttonUseSaved.UseVisualStyleBackColor = true;
-            this.buttonUseSaved.Click += new System.EventHandler(this.OnUseSavedClick);
+            buttonUseSaved.Anchor = AnchorStyles.None;
+            buttonUseSaved.AutoSize = true;
+            buttonUseSaved.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonUseSaved.Location = new Point(203, 3);
+            buttonUseSaved.Name = "buttonUseSaved";
+            buttonUseSaved.Size = new Size(165, 51);
+            buttonUseSaved.TabIndex = 4;
+            buttonUseSaved.Text = "Use Saved";
+            toolTip.SetToolTip(buttonUseSaved, "Load the last saved settings.");
+            buttonUseSaved.UseVisualStyleBackColor = true;
+            buttonUseSaved.Click += OnUseSavedClick;
             // 
             // buttonPreferences
             // 
-            this.buttonPreferences.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonPreferences.AutoSize = true;
-            this.buttonPreferences.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonPreferences.Location = new System.Drawing.Point(374, 3);
-            this.buttonPreferences.Name = "buttonPreferences";
-            this.buttonPreferences.Size = new System.Drawing.Size(89, 51);
-            this.buttonPreferences.TabIndex = 5;
-            this.buttonPreferences.Text = "Save";
-            this.toolTip.SetToolTip(this.buttonPreferences, "Save the current settings.");
-            this.buttonPreferences.UseVisualStyleBackColor = true;
-            this.buttonPreferences.Click += new System.EventHandler(this.OnSaveClick);
+            buttonPreferences.Anchor = AnchorStyles.None;
+            buttonPreferences.AutoSize = true;
+            buttonPreferences.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonPreferences.Location = new Point(374, 3);
+            buttonPreferences.Name = "buttonPreferences";
+            buttonPreferences.Size = new Size(89, 51);
+            buttonPreferences.TabIndex = 5;
+            buttonPreferences.Text = "Save";
+            toolTip.SetToolTip(buttonPreferences, "Save the current settings.");
+            buttonPreferences.UseVisualStyleBackColor = true;
+            buttonPreferences.Click += OnSaveClick;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonCancel.AutoSize = true;
-            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonCancel.Location = new System.Drawing.Point(516, 3);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(116, 51);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
-            this.toolTip.SetToolTip(this.buttonCancel, "Cancel. No settings are changed.");
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.OnCancelClick);
+            buttonCancel.Anchor = AnchorStyles.None;
+            buttonCancel.AutoSize = true;
+            buttonCancel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonCancel.Location = new Point(516, 3);
+            buttonCancel.Margin = new Padding(50, 3, 3, 3);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(116, 51);
+            buttonCancel.TabIndex = 2;
+            buttonCancel.Text = "Cancel";
+            toolTip.SetToolTip(buttonCancel, "Cancel. No settings are changed.");
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += OnCancelClick;
             // 
             // buttonOkButton
             // 
-            this.buttonOkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonOkButton.AutoSize = true;
-            this.buttonOkButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonOkButton.Location = new System.Drawing.Point(638, 3);
-            this.buttonOkButton.Name = "buttonOkButton";
-            this.buttonOkButton.Size = new System.Drawing.Size(68, 51);
-            this.buttonOkButton.TabIndex = 1;
-            this.buttonOkButton.Text = "OK";
-            this.toolTip.SetToolTip(this.buttonOkButton, "Save current settings and exit.");
-            this.buttonOkButton.UseVisualStyleBackColor = true;
-            this.buttonOkButton.Click += new System.EventHandler(this.OnOkClick);
+            buttonOkButton.Anchor = AnchorStyles.None;
+            buttonOkButton.AutoSize = true;
+            buttonOkButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonOkButton.Location = new Point(638, 3);
+            buttonOkButton.Name = "buttonOkButton";
+            buttonOkButton.Size = new Size(68, 51);
+            buttonOkButton.TabIndex = 1;
+            buttonOkButton.Text = "OK";
+            toolTip.SetToolTip(buttonOkButton, "Save current settings and exit.");
+            buttonOkButton.UseVisualStyleBackColor = true;
+            buttonOkButton.Click += OnOkClick;
             // 
             // toolTip
             // 
-            this.toolTip.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip_Popup);
+            toolTip.Popup += toolTip_Popup;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.Size = new Size(200, 100);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 2);
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(194, 1);
-            this.tableLayoutPanel2.TabIndex = 0;
+            tableLayoutPanel2.AutoSize = true;
+            tableLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel2.BackColor = SystemColors.Control;
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel2, 2);
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.Size = new Size(194, 1);
+            tableLayoutPanel2.TabIndex = 0;
             // 
             // OptionsDialog
             // 
-            this.AcceptButton = this.buttonOkButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 762);
-            this.Controls.Add(this.tableLayoutPanelTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "OptionsDialog";
-            this.ShowIcon = false;
-            this.Text = "Options";
-            this.Load += new System.EventHandler(this.OptionsDialog_Load);
-            this.tableLayoutPanelTop.ResumeLayout(false);
-            this.tableLayoutPanelTop.PerformLayout();
-            this.groupBoxPrinting.ResumeLayout(false);
-            this.groupBoxPrinting.PerformLayout();
-            this.tableLayoutPanelPrinting.ResumeLayout(false);
-            this.tableLayoutPanelPrinting.PerformLayout();
-            this.groupBoxMargins.ResumeLayout(false);
-            this.groupBoxMargins.PerformLayout();
-            this.tableLayoutPanelMargins.ResumeLayout(false);
-            this.tableLayoutPanelMargins.PerformLayout();
-            this.tableLayoutPanelMarginsLeft.ResumeLayout(false);
-            this.tableLayoutPanelMarginsLeft.PerformLayout();
-            this.tableLayoutPanelMarginsRight.ResumeLayout(false);
-            this.tableLayoutPanelMarginsRight.PerformLayout();
-            this.tableLayoutPanelMarginsTop.ResumeLayout(false);
-            this.tableLayoutPanelMarginsTop.PerformLayout();
-            this.tableLayoutPanelMarginsBottom.ResumeLayout(false);
-            this.tableLayoutPanelMarginsBottom.PerformLayout();
-            this.groupBoxInterface.ResumeLayout(false);
-            this.groupBoxInterface.PerformLayout();
-            this.tableLayoutPanelInterface.ResumeLayout(false);
-            this.tableLayoutPanelInterface.PerformLayout();
-            this.tableLayoutPanelCustomZoom.ResumeLayout(false);
-            this.tableLayoutPanelCustomZoom.PerformLayout();
-            this.tableLayoutSelectionColor.ResumeLayout(false);
-            this.tableLayoutSelectionColor.PerformLayout();
-            this.tableLayoutSelectionLineWidth.ResumeLayout(false);
-            this.tableLayoutSelectionLineWidth.PerformLayout();
-            this.flowLayoutPanelButtons.ResumeLayout(false);
-            this.flowLayoutPanelButtons.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = buttonOkButton;
+            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(858, 762);
+            Controls.Add(tableLayoutPanelTop);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "OptionsDialog";
+            ShowIcon = false;
+            Text = "Options";
+            Load += OptionsDialog_Load;
+            tableLayoutPanelTop.ResumeLayout(false);
+            tableLayoutPanelTop.PerformLayout();
+            groupBoxPrinting.ResumeLayout(false);
+            groupBoxPrinting.PerformLayout();
+            tableLayoutPanelPrinting.ResumeLayout(false);
+            tableLayoutPanelPrinting.PerformLayout();
+            groupBoxMargins.ResumeLayout(false);
+            groupBoxMargins.PerformLayout();
+            tableLayoutPanelMargins.ResumeLayout(false);
+            tableLayoutPanelMargins.PerformLayout();
+            tableLayoutPanelMarginsLeft.ResumeLayout(false);
+            tableLayoutPanelMarginsLeft.PerformLayout();
+            tableLayoutPanelMarginsRight.ResumeLayout(false);
+            tableLayoutPanelMarginsRight.PerformLayout();
+            tableLayoutPanelMarginsTop.ResumeLayout(false);
+            tableLayoutPanelMarginsTop.PerformLayout();
+            tableLayoutPanelMarginsBottom.ResumeLayout(false);
+            tableLayoutPanelMarginsBottom.PerformLayout();
+            groupBoxInterface.ResumeLayout(false);
+            groupBoxInterface.PerformLayout();
+            tableLayoutPanelInterface.ResumeLayout(false);
+            tableLayoutPanelInterface.PerformLayout();
+            tableLayoutPanelCustomZoom.ResumeLayout(false);
+            tableLayoutPanelCustomZoom.PerformLayout();
+            tableLayoutSelectionColor.ResumeLayout(false);
+            tableLayoutSelectionColor.PerformLayout();
+            tableLayoutSelectionLineWidth.ResumeLayout(false);
+            tableLayoutSelectionLineWidth.PerformLayout();
+            flowLayoutPanelButtons.ResumeLayout(false);
+            flowLayoutPanelButtons.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
